@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- html2pdf for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="logo.png" alt="Sikko Logo" style="height: 40px; margin-right: 10px; border-radius: 50%;" />
+      <span class="logo-text">SIKKO</span>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#" class="nav-link" data-target="dashboardView"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+      </li>
+      <li><a href="#" class="nav-link active" data-target="invoiceView"><i class="fa-solid fa-file-invoice"></i>
+          Invoices</a></li>
+      <li><a href="#" class="nav-link" data-target="clientsView"><i class="fa-solid fa-users"></i> Clients</a></li>
+      <li><a href="#" class="nav-link" data-target="reportsView"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- DASHBOARD VIEW -->
+    <section id="dashboardView" class="view-section hidden">
+      <header class="top-header">
+        <h2>Dashboard Overview</h2>
+      </header>
+      <div class="view-body">
+        <div class="grid-3 mt-2">
+          <div class="stat-card">
+            <i class="fa-solid fa-file-invoice" style="color:var(--primary); font-size:2rem;"></i>
+            <div>
+              <h3>Total Invoices</h3>
+              <p id="dashTotalInvoices">0</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-users" style="color:#10b981; font-size:2rem;"></i>
+            <div>
+              <h3>Total Clients</h3>
+              <p id="dashTotalClients">0</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-wallet" style="color:#f59e0b; font-size:2rem;"></i>
+            <div>
+              <h3>Revenue</h3>
+              <p id="dashTotalRevenue">₹ 0</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-card mt-2">
+          <h3>Recent Activity</h3>
+          <div id="dashRecentActivity">
+            <p class="text-muted mt-2">No activity yet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS VIEW -->
+    <section id="clientsView" class="view-section hidden">
+      <header class="top-header">
+        <h2>Manage Clients</h2>
+        <button id="openAddClientBtn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Client</button>
+      </header>
+      <div class="view-body">
+        <div class="form-card mt-2">
+          <h3>Client Directory</h3>
+          <table class="form-table mt-2">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>GST No.</th>
+                <th>Contact</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="clientsTableBody">
+              <tr>
+                <td colspan="4" class="text-center text-muted">No clients added yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTS VIEW -->
+    <section id="reportsView" class="view-section hidden">
+      <header class="top-header">
+        <h2>Reports & Analytics</h2>
+        <button id="exportReportBtn" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export Data
+          (CSV)</button>
+      </header>
+      <div class="view-body">
+        <div class="form-card mt-2">
+          <h3>Monthly Tax Report (GST)</h3>
+          <table class="form-table mt-2">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Total Invoices</th>
+                <th>Taxable Amount</th>
+                <th>Total GST</th>
+                <th>Grand Total</th>
+              </tr>
+            </thead>
+            <tbody id="reportTableBody">
+              <tr>
+                <td colspan="5" class="text-center text-muted">No data available.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVOICES VIEW (Form) -->
+    <section id="invoiceView" class="view-section active">
+      <header class="top-header">
+        <h2>Invoice Generator</h2>
+        <div class="header-actions">
+          <button id="saveBtn" class="btn btn-secondary"><i class="fa-solid fa-floppy-disk"></i> Save Data</button>
+          <button id="previewBtn" class="btn btn-secondary"><i class="fa-solid fa-eye"></i> Preview</button>
+          <button id="generatePdfBtn" class="btn btn-primary"><i class="fa-solid fa-file-pdf"></i> Generate PDF</button>
+        </div>
+      </header>
+
+      <div class="form-section" id="formSection">
+        <form id="invoiceForm">
+
+          <div class="form-card">
+            <h3><i class="fa-solid fa-building"></i> Company Info</h3>
+            <div class="grid-3">
+              <div class="input-group">
+                <label>Company Name</label>
+                <input type="text" id="companyName" placeholder="Enter Company Name" value="SIKKO INDUSTRIES LTD" />
+              </div>
+              <div class="input-group">
+                <label>PI Number</label>
+                <input type="text" id="piNumber" placeholder="Enter PI Number" />
+              </div>
+              <div class="input-group">
+                <label>PI Date</label>
+                <input type="date" id="piDate" />
+              </div>
+              <div class="input-group full-width">
+                <label>Reg. & Dispatch Address</label>
+                <textarea id="companyAddress" rows="2" placeholder="Enter Address">Reg. Office: 508, ISCON ELEGANCE, NR. JAIN TEMPLE...
+Dispatch Address: 55 A & B...</textarea>
+              </div>
+              <div class="input-group">
+                <label>GST No.</label>
+                <input type="text" id="companyGst" placeholder="Enter GST No." value="24AAGCS0629C1ZT" />
+              </div>
+              <div class="input-group">
+                <label>Concerned Person</label>
+                <input type="text" id="companyPerson" placeholder="Enter Person Name" value="Ms. Manisha Chavada" />
+              </div>
+              <div class="input-group">
+                <label>Contact No.</label>
+                <input type="text" id="companyContact" placeholder="Enter Contact No." value="7069026163" />
+              </div>
+              <div class="input-group full-width">
+                <label>Upload Company Logo</label>
+                <input type="file" id="logoUpload" accept="image/*" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3><i class="fa-solid fa-user-tie"></i> Bill To & Ship To (Consignee)</h3>
+            <div class="grid-3">
+              <div class="input-group full-width">
+                <label>Consignee Name</label>
+                <input type="text" id="consigneeName" placeholder="Enter Consignee Name" />
+              </div>
+              <div class="input-group full-width">
+                <label>Address</label>
+                <textarea id="consigneeAddress" rows="2" placeholder="Enter Address"></textarea>
+              </div>
+              <div class="input-group">
+                <label>GST No.</label>
+                <input type="text" id="consigneeGst" placeholder="Enter GST No." />
+              </div>
+              <div class="input-group">
+                <label>Concerned Person</label>
+                <input type="text" id="consigneePerson" placeholder="Enter Person Name" />
+              </div>
+              <div class="input-group">
+                <label>Contact No.</label>
+                <input type="text" id="consigneeContact" placeholder="Enter Contact No." />
+              </div>
+              <div class="input-group">
+                <label>Transporter Name</label>
+                <input type="text" id="transporterName" placeholder="Enter Transporter" />
+              </div>
+              <div class="input-group">
+                <label>Delivery Location</label>
+                <input type="text" id="deliveryLocation" placeholder="Enter Delivery Location" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3><i class="fa-solid fa-building-columns"></i> Bank Details</h3>
+            <div class="grid-3">
+              <div class="input-group">
+                <label>Bank Name</label>
+                <input type="text" id="bankName" placeholder="Enter Bank Name" value="ICICI BANK LTD." />
+              </div>
+              <div class="input-group">
+                <label>A/C Name</label>
+                <input type="text" id="acName" placeholder="Enter A/C Name" value="Sikko Industries Ltd." />
+              </div>
+              <div class="input-group">
+                <label>A/C No. (9 to 18 digits)</label>
+                <input type="text" id="acNo" placeholder="e.g. 123456789012" value="423551000001" pattern="\d{9,18}"
+                  maxlength="18" title="Account number must be between 9 and 18 digits"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+              </div>
+              <div class="input-group">
+                <label>IFSC Code</label>
+                <input type="text" id="ifscCode" placeholder="Enter IFSC Code" value="ICIC0004235" />
+              </div>
+              <div class="input-group">
+                <label>Branch</label>
+                <input type="text" id="branch" placeholder="Enter Branch" value="Makarba Ahmedabad (Gujarat)" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3><i class="fa-solid fa-box"></i> Products</h3>
+            <div class="table-responsive">
+              <table class="form-table">
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>HSN Code</th>
+                    <th>Packing Size</th>
+                    <th>Qty Unit</th>
+                    <th>Qt. C/S</th>
+                    <th>Total Qty</th>
+                    <th>Price/Unit</th>
+                    <th>CGST%</th>
+                    <th>SGST%</th>
+                    <th>IGST%</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="productRows">
+                  <!-- Rows added dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <button type="button" id="addProductBtn" class="btn btn-secondary mt-2"><i class="fa-solid fa-plus"></i> Add
+              Product</button>
+          </div>
+
+          <div class="form-card">
+            <h3><i class="fa-solid fa-calculator"></i> Totals & Footer</h3>
+            <div class="grid-3">
+              <div class="input-group">
+                <label>Freight Charges</label>
+                <input type="number" id="freightCharges" value="0.00" />
+              </div>
+              <div class="input-group">
+                <label>Round Off</label>
+                <input type="number" id="roundOff" value="0.00" />
+              </div>
+              <div class="input-group">
+                <label>Previous Cr. Amt. (If Any)</label>
+                <input type="number" id="prevCrAmt" value="0.00" />
+              </div>
+            </div>
+            <div class="input-group full-width mt-2">
+              <label>Terms & Conditions (One per line)</label>
+              <textarea id="termsConditions" rows="5">
+1. Ones this proforma Invoice is confirmed by the consignee, it can not be changed OR cancelled.
+2. Payment Terms : 100% Advanced
+3. All good sent outstation is at buyer's risk.
+4. All dispute will be settled at court of law- Ahmedabad (Gujarat) Jurisdiction.
+5. Above quoted prices are all exfactory (Ahmedabad-Gujarat).
+6. Goods sold once will not be taken back at any circumstances.
+7. Material will dispatch WITHIN 15 days after payment procedure.
+            </textarea>
+            </div>
+            <div class="grid-3 mt-2">
+              <div class="input-group">
+                <label>Upload Consignor Signature / Stamp</label>
+                <input type="file" id="signUpload" accept="image/*" />
+              </div>
+              <div class="input-group">
+                <label>Upload Consignee Stamp (Optional)</label>
+                <input type="file" id="stampUpload" accept="image/*" />
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Invoice Preview</h2>
+        <div>
+          <button id="downloadPdfModalBtn" class="btn btn-primary"><i class="fa-solid fa-file-pdf"></i>
+            Download</button>
+          <button id="closePreviewBtn" class="btn btn-secondary"><i class="fa-solid fa-times"></i> Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <!-- ACTUAL INVOICE A4 FORMAT -->
+        <div id="invoiceA4" class="invoice-a4">
+          <div class="inv-top-bar">PROFORMA INVOICE</div>
+
+          <!-- Header Section -->
+          <div class="inv-header">
+            <div class="inv-logo" style="position: relative;">
+              <img id="p_logoImg" src="logo.png"
+                style="display:block; max-width: 100%; max-height: 80px; object-fit: contain;" />
+              <div class="logo-placeholder" id="p_logoPlaceholder" style="display:none;"><i class="fa-solid fa-leaf"
+                  style="font-size: 28px; margin-bottom: 5px;"></i>SIKKO</div>
+            </div>
+            <div class="inv-company">
+              <h1 id="p_companyName" contenteditable="true">SIKKO INDUSTRIES LTD</h1>
+              <p id="p_companyAddress">Reg. Office: 508, ISCON ELEGANCE, NR. JAIN TEMPLE...<br>Dispatch Address: 55 A &
+                B...</p>
+            </div>
+            <div class="inv-meta">
+              <div class="meta-grid">
+                <div class="m-label">PI Number:</div>
+                <div class="m-val" id="p_piNumber">6052</div>
+                <div class="m-label">PI Date:</div>
+                <div class="m-val" id="p_piDate">19.05.2025</div>
+                <div class="m-label">Consignor's GST No:</div>
+                <div class="m-val fw-bold" id="p_companyGst">24AAGCS0629C1ZT</div>
+                <div class="m-label" style="font-size:8px;">Consignor's Concerned Person:</div>
+                <div class="m-val" id="p_companyPerson">Ms. Manisha Chavada</div>
+                <div class="m-label">Contact No:</div>
+                <div class="m-val" id="p_companyContact">7069026163</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="inv-section-title">
+            <div class="left-title">Bill To & Ship To Address</div>
+            <div class="right-title">Bank Details</div>
+          </div>
+
+          <!-- Address & Bank Details Section -->
+          <div class="inv-details">
+            <div class="inv-bill-to">
+              <div class="dt-row">
+                <strong>Consignee: <span id="p_consigneeName">MAHAVEER AGRO CARE</span></strong>
+              </div>
+              <div class="dt-row">
+                <strong>Address:</strong> <span id="p_consigneeAddress">Khatano. 182/110, PlotNo... ODISHA</span>
+              </div>
+              <div class="dt-row">
+                <strong>GST No.</strong> <span id="p_consigneeGst">21DWPPD1549P1Z6</span>
+              </div>
+              <div class="dt-grid">
+                <div class="dt-col">
+                  <strong>Concerned Person:</strong> <span id="p_consigneePerson">Mr. Manas Ranjan Das</span>
+                </div>
+                <div class="dt-col border-left">
+                  <strong>Transporter Name:</strong> <span id="p_transporterName" class="text-red">TCI Freight</span>
+                </div>
+              </div>
+              <div class="dt-grid border-top">
+                <div class="dt-col">
+                  <strong>Contact No.</strong> <span id="p_consigneeContact">9337027856</span>
+                </div>
+                <div class="dt-col border-left">
+                  <strong>Delivery Location:</strong><br><span id="p_deliveryLocation" class="text-blue">Bargarh -
+                    768028</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="inv-bank">
+              <div class="bank-top-title">A/C Details</div>
+              <div class="bank-content">
+                <div class="bank-text">
+                  <p><strong>Bank Name:</strong> <span id="p_bankName" class="text-red">ICICI BANK LTD.</span></p>
+                  <p><strong>A/C Name:</strong> <span id="p_acName" class="text-red">Sikko Industries Ltd.</span></p>
+                  <p><strong>A/C. No.</strong> <span id="p_acNo" class="text-red">423551000001</span></p>
+                  <p><strong>IFSC Code -</strong> <span id="p_ifscCode" class="text-red">ICIC0004235</span></p>
+                  <p><strong>Branch -</strong> <span id="p_branch" class="text-red">Makarba Ahmedabad (Gujarat)</span>
+                  </p>
+                </div>
+                <div class="bank-qr">
+                  <div class="qr-title">Scan QR Code for UPI Transaction</div>
+                  <div class="qr-box">QR<br>CODE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Table -->
+          <table class="inv-table">
+            <thead>
+              <tr>
+                <th style="width:4%;">SL. No.</th>
+                <th style="width:25%;">Product Name</th>
+                <th style="width:6%;">HSN Code</th>
+                <th style="width:8%;">Packing Size</th>
+                <th style="width:4%;">Qt. C/S</th>
+                <th style="width:6%;">Quantity in Unit</th>
+                <th style="width:7%;">Price Per Unit</th>
+                <th style="width:8%;">Taxable Value</th>
+                <th style="width:4%;">CGST %</th>
+                <th style="width:4%;">SGST %</th>
+                <th style="width:4%;">IGST %</th>
+                <th style="width:8%;">GST Amt.</th>
+                <th style="width:12%;">Total amt. with GST</th>
+              </tr>
+            </thead>
+            <tbody id="p_tableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+            <tfoot>
+              <tr class="fw-bold bg-light">
+                <td colspan="5" class="text-center">Total</td>
+                <td id="p_totalQty"></td>
+                <td></td>
+                <td id="p_totalTaxable"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="p_totalGstAmt"></td>
+                <td id="p_totalAmtWithGst" style="display:none;"></td> <!-- Hidden cell logic -->
+              </tr>
+            </tfoot>
+          </table>
+
+          <!-- Amount In Words & Final Totals -->
+          <div class="inv-footer-totals">
+            <div class="amt-words-section">
+              <div class="words-label">Amt. in<br>Word</div>
+              <div class="words-val" id="p_amtInWords"></div>
+            </div>
+            <div class="totals-section">
+              <div class="t-row">
+                <div class="t-label text-blue fw-bold" style="font-size:12px;">Total Amt.</div>
+                <div class="t-val fw-bold text-blue" id="p_totalAmt">0.00</div>
+              </div>
+              <div class="t-row">
+                <div class="t-label text-purple" style="font-size:10px;">Freight Charges</div>
+                <div class="t-val" id="p_freight">0.00</div>
+              </div>
+              <div class="t-row">
+                <div class="t-label text-purple" style="font-size:10px;">Round Off.</div>
+                <div class="t-val" id="p_roundOff">0.00</div>
+              </div>
+              <div class="t-row">
+                <div class="t-label text-orange" style="font-size:10px;">Previous Cr. Amt. (If Any)</div>
+                <div class="t-val" id="p_prevCr">0.00</div>
+              </div>
+              <div class="t-row final-amt-row">
+                <div class="t-label text-blue" style="font-size:16px;">Final Amt.</div>
+                <div class="t-val text-red" style="font-size:16px;" id="p_finalAmt">0.00</div>
+              </div>
+              <div class="sign-area text-center">
+                <p>For <span id="p_signCompany">SIKKO INDUSTRIES LTD</span></p>
+                <div
+                  style="height: 50px; margin-top: 5px; display: flex; align-items: center; justify-content: center;">
+                  <img id="p_signImg" src=""
+                    style="display:none; max-height: 50px; max-width: 100%; object-fit: contain;" />
+                </div>
+                <p>Trade Executive</p>
+                <p>(<span id="p_signPerson">Ms. Manisha Chavada</span>)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms & Signatures -->
+          <div class="inv-terms-area">
+            <div class="terms-box">
+              <div class="terms-title text-red fw-bold">TERMS & CONDITIONS:</div>
+              <div class="terms-list" id="p_termsList">
+                <!-- Terms go here -->
+              </div>
+            </div>
+            <div class="consignee-sign">
+              <p>Proforma Confirmed & Accepted by Consignee</p>
+              <p>(Sign & Stamp)</p>
+              <div style="height: 50px; margin-top: 5px; display: flex; align-items: center; justify-content: center;">
+                <img id="p_stampImg" src=""
+                  style="display:none; max-height: 50px; max-width: 100%; object-fit: contain;" />
+              </div>
+              <p class="fw-bold mt-2" id="p_consigneeSignName">Mr. Manas Ranjan Das</p>
+            </div>
+          </div>
+
+        </div> <!-- End Invoice A4 -->
+
+      </div>
+    </div>
+  </div>
+      <!-- Add Client Modal -->
+      <div id="addClientModal" class="modal">
+        <div class="modal-content" style="max-width: 500px; height: auto;">
+          <div class="modal-header">
+            <h2>Add New Client</h2>
+            <button id="closeAddClientBtn" class="btn btn-secondary" style="padding: 0.5rem;"><i
+                class="fa-solid fa-times"></i></button>
+          </div>
+          <div class="modal-body" style="display: block;">
+            <form id="addClientForm">
+              <div class="input-group mb-2">
+                <label>Client Name *</label>
+                <input type="text" id="newClientName" required placeholder="Enter Client Name" />
+              </div>
+              <div class="input-group mb-2" style="margin-top: 1rem;">
+                <label>GST No.</label>
+                <input type="text" id="newClientGst" placeholder="Enter GST No." />
+              </div>
+              <div class="input-group mb-2" style="margin-top: 1rem;">
+                <label>Contact No.</label>
+                <input type="text" id="newClientContact" placeholder="Enter Contact No." />
+              </div>
+              <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                <button type="button" id="cancelAddClientBtn" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Client</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>
