@@ -6,6 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Global logger to see all requests
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
+
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -38,6 +44,10 @@ db.connect(err => {
         addColumn('products_master', 'subproducts', "TEXT");
         addColumn('users', 'role', "VARCHAR(50) DEFAULT 'Admin'");
         addColumn('users', 'password', "VARCHAR(255) DEFAULT ''");
+        addColumn('users', 'employee_id', "VARCHAR(50) DEFAULT ''");
+        addColumn('users', 'name', "VARCHAR(255) DEFAULT ''");
+        addColumn('users', 'email', "VARCHAR(255) DEFAULT ''");
+        addColumn('invoices', 'status', "VARCHAR(50) DEFAULT 'Pending'");
         
         // Force create/update tables
         const createTables = [
@@ -46,7 +56,7 @@ db.connect(err => {
                 pi_number VARCHAR(100),
                 client_name VARCHAR(255),
                 total_amount DECIMAL(15,2),
-                status VARCHAR(50) DEFAULT 'PAID',
+                status VARCHAR(50) DEFAULT 'PENDING',
                 created_by VARCHAR(255) DEFAULT 'Admin',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )`,
@@ -72,9 +82,23 @@ db.connect(err => {
             )`,
             `CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255),
+                email VARCHAR(255) UNIQUE,
+                employee_id VARCHAR(50),
                 username VARCHAR(255) UNIQUE,
                 password VARCHAR(255),
                 role VARCHAR(50) DEFAULT 'Admin'
+            )`,
+            `CREATE TABLE IF NOT EXISTS company_info (
+                id INT PRIMARY KEY DEFAULT 1,
+                name VARCHAR(255),
+                address TEXT,
+                gst VARCHAR(50),
+                bank_name VARCHAR(255),
+                account_no VARCHAR(100),
+                ifsc VARCHAR(50),
+                branch VARCHAR(255),
+                contact VARCHAR(20)
             )`
         ];
 
@@ -172,26 +196,28 @@ db.connect(err => {
 
 // --- Auth API ---
 app.post('/api/signup', (req, res) => {
-    const { username, password, role } = req.body;
-    db.query("INSERT INTO users (username, password, role) VALUES (?, ?, ?)", [username, password, role || 'Admin'], (err, result) => {
+    const { name, employeeId, username, email, password, role } = req.body;
+    db.query("INSERT INTO users (name, employee_id, username, email, password, role) VALUES (?, ?, ?, ?, ?, ?)", 
+    [name || '', employeeId || '', username || email, email, password, role || 'Admin'], (err, result) => {
         if (err) {
             if (err.code === 'ER_DUP_ENTRY') {
-                return res.status(400).json({ success: false, message: "Username already exists" });
+                return res.status(400).json({ success: false, message: "Email or Username already exists" });
             }
             return res.status(500).json({ error: err.message });
         }
-        res.json({ success: true, user: { id: result.insertId, username, role: role || 'Admin' } });
+        res.json({ success: true, user: { id: result.insertId, name, employeeId, username: username || email, email, role: role || 'Admin' } });
     });
 });
 
 app.post('/api/login', (req, res) => {
-    const { username, password } = req.body;
-    db.query("SELECT * FROM users WHERE username = ? AND password = ?", [username, password], (err, results) => {
+    const { email, password } = req.body;
+    // Allow login via email or username
+    db.query("SELECT * FROM users WHERE (email = ? OR username = ?) AND password = ?", [email, email, password], (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
         if (results.length > 0) {
             res.json({ success: true, user: results[0] });
         } else {
-            res.status(401).json({ success: false, message: "Invalid username or password" });
+            res.status(401).json({ success: false, message: "Invalid email or password" });
         }
     });
 });
@@ -200,6 +226,29 @@ app.get('/api/users', (req, res) => {
     db.query("SELECT * FROM users", (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(results);
+    });
+});
+
+app.put('/api/users/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, employee_id, username, role } = req.body;
+    console.log(`Updating user ${id}:`, { name, employee_id, username, role });
+    db.query("UPDATE users SET name=?, employee_id=?, username=?, role=? WHERE id=?", 
+    [name, employee_id, username, role, id], (err) => {
+        if (err) {
+            console.error('Update error:', err);
+            return res.status(500).json({ error: err.message });
+        }
+        console.log('User updated successfully');
+        res.json({ success: true });
+    });
+});
+
+app.delete('/api/users/:id', (req, res) => {
+    const { id } = req.params;
+    db.query("DELETE FROM users WHERE id = ?", [id], (err) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ success: true });
     });
 });
 
@@ -226,9 +275,9 @@ app.post('/api/customers', (req, res) => {
 
 app.put('/api/customers/:id', (req, res) => {
     const { id } = req.params;
-    const { name, company, phone, email, gst, city } = req.body;
-    db.query("UPDATE customers SET name=?, company=?, phone=?, email=?, gst=?, city=? WHERE id=?", 
-    [name, company, phone, email, gst, city, id], (err) => {
+    const { name, company, phone, email, gst, city, contact, address, person } = req.body;
+    db.query("UPDATE customers SET name=?, company=?, phone=?, email=?, gst=?, city=?, contact=?, address=?, person=? WHERE id=?", 
+    [name, company, phone, email, gst, city, contact || phone, address || '', person || name, id], (err) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ success: true });
     });
@@ -237,8 +286,8 @@ app.put('/api/customers/:id', (req, res) => {
 // --- Invoices API ---
 app.post('/api/save-invoice', (req, res) => {
     const { formData, products, finalAmt, created_by } = req.body;
-    const sql = "INSERT INTO invoices (pi_number, client_name, total_amount, created_by) VALUES (?, ?, ?, ?)";
-    db.query(sql, [formData.piNumber, formData.consigneeName, finalAmt, created_by || 'Admin'], (err, result) => {
+    const sql = "INSERT INTO invoices (pi_number, client_name, total_amount, created_by, status) VALUES (?, ?, ?, ?, ?)";
+    db.query(sql, [formData.piNumber, formData.consigneeName, finalAmt, created_by || 'Admin', 'Pending'], (err, result) => {
         if (err) return res.status(500).json({ error: err.message });
         const invoiceId = result.insertId;
         const itemValues = products.map(p => [invoiceId, p.name, p.qty, p.price]);
@@ -246,6 +295,19 @@ app.post('/api/save-invoice', (req, res) => {
         db.query(itemSql, [itemValues], (err2) => {
             if (err2) return res.status(500).json({ error: err2.message });
             res.json({ message: "Success", id: invoiceId });
+        });
+    });
+});
+
+app.get('/api/invoices/:id', (req, res) => {
+    const { id } = req.params;
+    db.query("SELECT * FROM invoices WHERE id = ?", [id], (err, invoiceResult) => {
+        if (err) return res.status(500).json({ error: err.message });
+        if (invoiceResult.length === 0) return res.status(404).json({ error: "Invoice not found" });
+        
+        db.query("SELECT * FROM invoice_items WHERE invoice_id = ?", [id], (err2, itemsResult) => {
+            if (err2) return res.status(500).json({ error: err2.message });
+            res.json({ ...invoiceResult[0], items: itemsResult });
         });
     });
 });
@@ -285,9 +347,9 @@ app.post('/api/products', (req, res) => {
 
 app.put('/api/products/:id', (req, res) => {
     const { id } = req.params;
-    const { name, hsn, pack, price, cat, subproducts } = req.body;
-    db.query("UPDATE products_master SET name=?, hsn=?, pack=?, price=?, cat=?, subproducts=? WHERE id=?", 
-    [name, hsn, pack, price, cat, JSON.stringify(subproducts || []), id], (err) => {
+    const { name, hsn, pack, price, unit, cat, stock, subproducts } = req.body;
+    db.query("UPDATE products_master SET name=?, hsn=?, pack=?, price=?, unit=?, cat=?, stock=?, subproducts=? WHERE id=?", 
+    [name, hsn, pack, price, unit || '', cat, stock || 0, JSON.stringify(subproducts || []), id], (err) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ success: true });
     });
@@ -296,11 +358,36 @@ app.put('/api/products/:id', (req, res) => {
 app.put('/api/invoices/:id/status', (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
+    console.log(`Updating invoice ${id} status to: ${status}`);
     db.query("UPDATE invoices SET status=? WHERE id=?", [status, id], (err) => {
+        if (err) {
+            console.error('Error updating status:', err);
+            return res.status(500).json({ error: err.message });
+        }
+        console.log('Status updated successfully');
+        res.json({ success: true });
+    });
+});
+
+// --- Company Info API ---
+app.get('/api/company-info', (req, res) => {
+    db.query("SELECT * FROM company_info WHERE id = 1", (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+        if (results.length > 0) res.json(results[0]);
+        else res.json({});
+    });
+});
+
+app.post('/api/company-info', (req, res) => {
+    const { name, address, gst, bank_name, account_no, ifsc, branch, contact } = req.body;
+    db.query(`INSERT INTO company_info (id, name, address, gst, bank_name, account_no, ifsc, branch, contact) 
+              VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?) 
+              ON DUPLICATE KEY UPDATE name=?, address=?, gst=?, bank_name=?, account_no=?, ifsc=?, branch=?, contact=?`, 
+    [name, address, gst, bank_name, account_no, ifsc, branch, contact, name, address, gst, bank_name, account_no, ifsc, branch, contact], (err) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ success: true });
     });
 });
 
-const PORT = 5000;
+const PORT = 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

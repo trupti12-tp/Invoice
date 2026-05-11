@@ -36,58 +36,58 @@ function App() {
   ]);
   const [masterProducts, setMasterProducts] = useState([
     // 1. ORGANIC CERT. AGRO CHEMICALS
-    { id: 1, name: 'Neem Oil', hsn: '3808', price: 450.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 500, subproducts: [{id:11, pack:'500ml', price:250}, {id:12, pack:'1Ltr', price:450}]},
-    { id: 2, name: 'Vermicompost', hsn: '3101', price: 15.00, unit: 'Kg', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 1000, subproducts: []},
-    { id: 3, name: 'Bio Fertilizer', hsn: '3101', price: 120.00, unit: 'Kg', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 800, subproducts: []},
-    { id: 4, name: 'Organic Pesticides', hsn: '3808', price: 550.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 400, subproducts: []},
-    { id: 5, name: 'Seaweed Extract', hsn: '3101', price: 850.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 300, subproducts: []},
+    { id: 1, name: 'Neem Oil', hsn: '3808', price: 450.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 500, subproducts: [{ id: 11, pack: '500ml', price: 250 }, { id: 12, pack: '1Ltr', price: 450 }] },
+    { id: 2, name: 'Vermicompost', hsn: '3101', price: 15.00, unit: 'Kg', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 1000, subproducts: [] },
+    { id: 3, name: 'Bio Fertilizer', hsn: '3101', price: 120.00, unit: 'Kg', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 800, subproducts: [] },
+    { id: 4, name: 'Organic Pesticides', hsn: '3808', price: 550.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 400, subproducts: [] },
+    { id: 5, name: 'Seaweed Extract', hsn: '3101', price: 850.00, unit: 'Ltr', cat: 'ORGANIC CERT. AGRO CHEMICALS', stock: 300, subproducts: [] },
 
     // 2. ORGANIC AGRO CHEMICALS
-    { id: 6, name: 'Bio Insecticide', hsn: '3808', price: 650.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 300, subproducts: []},
-    { id: 7, name: 'Bio Fungicide', hsn: '3808', price: 720.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 250, subproducts: []},
-    { id: 8, name: 'Plant Growth Promoter', hsn: '3808', price: 900.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 200, subproducts: []},
-    { id: 9, name: 'Trichoderma', hsn: '3808', price: 380.00, unit: 'Kg', cat: 'ORGANIC AGRO CHEMICALS', stock: 500, subproducts: []},
-    { id: 10, name: 'Azotobacter', hsn: '3808', price: 420.00, unit: 'Kg', cat: 'ORGANIC AGRO CHEMICALS', stock: 450, subproducts: []},
+    { id: 6, name: 'Bio Insecticide', hsn: '3808', price: 650.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 300, subproducts: [] },
+    { id: 7, name: 'Bio Fungicide', hsn: '3808', price: 720.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 250, subproducts: [] },
+    { id: 8, name: 'Plant Growth Promoter', hsn: '3808', price: 900.00, unit: 'Ltr', cat: 'ORGANIC AGRO CHEMICALS', stock: 200, subproducts: [] },
+    { id: 9, name: 'Trichoderma', hsn: '3808', price: 380.00, unit: 'Kg', cat: 'ORGANIC AGRO CHEMICALS', stock: 500, subproducts: [] },
+    { id: 10, name: 'Azotobacter', hsn: '3808', price: 420.00, unit: 'Kg', cat: 'ORGANIC AGRO CHEMICALS', stock: 450, subproducts: [] },
 
     // 3. AGRO CHEMICALS
-    { id: 11, name: 'Insecticides', hsn: '3808', price: 800.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 600, subproducts: []},
-    { id: 12, name: 'Fungicides', hsn: '3808', price: 750.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 550, subproducts: []},
-    { id: 13, name: 'Herbicides', hsn: '3808', price: 680.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 400, subproducts: []},
-    { id: 14, name: 'Pesticides', hsn: '3808', price: 950.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 350, subproducts: []},
-    { id: 15, name: 'Plant Regulators', hsn: '3808', price: 1100.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 200, subproducts: []},
+    { id: 11, name: 'Insecticides', hsn: '3808', price: 800.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 600, subproducts: [] },
+    { id: 12, name: 'Fungicides', hsn: '3808', price: 750.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 550, subproducts: [] },
+    { id: 13, name: 'Herbicides', hsn: '3808', price: 680.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 400, subproducts: [] },
+    { id: 14, name: 'Pesticides', hsn: '3808', price: 950.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 350, subproducts: [] },
+    { id: 15, name: 'Plant Regulators', hsn: '3808', price: 1100.00, unit: 'Ltr', cat: 'AGRO CHEMICALS', stock: 200, subproducts: [] },
 
     // 4. FERTILIZERS
-    { id: 16, name: 'Urea', hsn: '3102', price: 266.50, unit: 'Bag', cat: 'FERTILIZERS', stock: 2000, subproducts: []},
-    { id: 17, name: 'DAP', hsn: '3105', price: 1350.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1500, subproducts: []},
-    { id: 18, name: 'NPK Fertilizer', hsn: '3105', price: 1470.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1200, subproducts: []},
-    { id: 19, name: 'Potash', hsn: '3104', price: 1700.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1000, subproducts: []},
-    { id: 20, name: 'Micronutrients', hsn: '3824', price: 450.00, unit: 'Kg', cat: 'FERTILIZERS', stock: 800, subproducts: []},
+    { id: 16, name: 'Urea', hsn: '3102', price: 266.50, unit: 'Bag', cat: 'FERTILIZERS', stock: 2000, subproducts: [] },
+    { id: 17, name: 'DAP', hsn: '3105', price: 1350.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1500, subproducts: [] },
+    { id: 18, name: 'NPK Fertilizer', hsn: '3105', price: 1470.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1200, subproducts: [] },
+    { id: 19, name: 'Potash', hsn: '3104', price: 1700.00, unit: 'Bag', cat: 'FERTILIZERS', stock: 1000, subproducts: [] },
+    { id: 20, name: 'Micronutrients', hsn: '3824', price: 450.00, unit: 'Kg', cat: 'FERTILIZERS', stock: 800, subproducts: [] },
 
     // 5. SEEDS
-    { id: 21, name: 'Wheat Seeds', hsn: '1001', price: 2500.00, unit: 'Bag', cat: 'SEEDS', stock: 5000, subproducts: []},
-    { id: 22, name: 'Rice Seeds', hsn: '1006', price: 3200.00, unit: 'Bag', cat: 'SEEDS', stock: 4000, subproducts: []},
-    { id: 23, name: 'Vegetable Seeds', hsn: '1209', price: 50.00, unit: 'Pkt', cat: 'SEEDS', stock: 10000, subproducts: []},
-    { id: 24, name: 'Hybrid Seeds', hsn: '1209', price: 500.00, unit: 'Kg', cat: 'SEEDS', stock: 2000, subproducts: []},
-    { id: 25, name: 'Cotton Seeds', hsn: '1207', price: 850.00, unit: 'Pkt', cat: 'SEEDS', stock: 3000, subproducts: []},
+    { id: 21, name: 'Wheat Seeds', hsn: '1001', price: 2500.00, unit: 'Bag', cat: 'SEEDS', stock: 5000, subproducts: [] },
+    { id: 22, name: 'Rice Seeds', hsn: '1006', price: 3200.00, unit: 'Bag', cat: 'SEEDS', stock: 4000, subproducts: [] },
+    { id: 23, name: 'Vegetable Seeds', hsn: '1209', price: 50.00, unit: 'Pkt', cat: 'SEEDS', stock: 10000, subproducts: [] },
+    { id: 24, name: 'Hybrid Seeds', hsn: '1209', price: 500.00, unit: 'Kg', cat: 'SEEDS', stock: 2000, subproducts: [] },
+    { id: 25, name: 'Cotton Seeds', hsn: '1207', price: 850.00, unit: 'Pkt', cat: 'SEEDS', stock: 3000, subproducts: [] },
 
     // 6. SPRAYERS
-    { id: 26, name: 'Hand Sprayer', hsn: '8424', price: 350.00, unit: 'Pc', cat: 'SPRAYERS', stock: 100, subproducts: []},
-    { id: 27, name: 'Battery Sprayer', hsn: '8424', price: 2800.00, unit: 'Pc', cat: 'SPRAYERS', stock: 80, subproducts: []},
-    { id: 28, name: 'Knapsack Sprayer', hsn: '8424', price: 1200.00, unit: 'Pc', cat: 'SPRAYERS', stock: 150, subproducts: []},
-    { id: 29, name: 'Power Sprayer', hsn: '8424', price: 8500.00, unit: 'Pc', cat: 'SPRAYERS', stock: 50, subproducts: []},
+    { id: 26, name: 'Hand Sprayer', hsn: '8424', price: 350.00, unit: 'Pc', cat: 'SPRAYERS', stock: 100, subproducts: [] },
+    { id: 27, name: 'Battery Sprayer', hsn: '8424', price: 2800.00, unit: 'Pc', cat: 'SPRAYERS', stock: 80, subproducts: [] },
+    { id: 28, name: 'Knapsack Sprayer', hsn: '8424', price: 1200.00, unit: 'Pc', cat: 'SPRAYERS', stock: 150, subproducts: [] },
+    { id: 29, name: 'Power Sprayer', hsn: '8424', price: 8500.00, unit: 'Pc', cat: 'SPRAYERS', stock: 50, subproducts: [] },
 
     // 7. FMCG PRODUCTS
-    { id: 30, name: 'Soap', hsn: '3401', price: 45.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 1000, subproducts: []},
-    { id: 31, name: 'Shampoo', hsn: '3305', price: 120.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 800, subproducts: []},
-    { id: 32, name: 'Detergent', hsn: '3402', price: 150.00, unit: 'Kg', cat: 'FMCG PRODUCTS', stock: 600, subproducts: []},
-    { id: 33, name: 'Oil', hsn: '1512', price: 180.00, unit: 'Ltr', cat: 'FMCG PRODUCTS', stock: 500, subproducts: []},
-    { id: 34, name: 'Packaged Food', hsn: '2106', price: 90.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 1200, subproducts: []},
+    { id: 30, name: 'Soap', hsn: '3401', price: 45.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 1000, subproducts: [] },
+    { id: 31, name: 'Shampoo', hsn: '3305', price: 120.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 800, subproducts: [] },
+    { id: 32, name: 'Detergent', hsn: '3402', price: 150.00, unit: 'Kg', cat: 'FMCG PRODUCTS', stock: 600, subproducts: [] },
+    { id: 33, name: 'Oil', hsn: '1512', price: 180.00, unit: 'Ltr', cat: 'FMCG PRODUCTS', stock: 500, subproducts: [] },
+    { id: 34, name: 'Packaged Food', hsn: '2106', price: 90.00, unit: 'Pc', cat: 'FMCG PRODUCTS', stock: 1200, subproducts: [] },
 
     // 8. HOUSEHOLD PRODUCTS
-    { id: 35, name: 'Cleaning Liquid', hsn: '3402', price: 110.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 400, subproducts: []},
-    { id: 36, name: 'Phenyl', hsn: '3808', price: 85.00, unit: 'Ltr', cat: 'HOUSEHOLD PRODUCTS', stock: 600, subproducts: []},
-    { id: 37, name: 'Dish Wash', hsn: '3402', price: 45.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 800, subproducts: []},
-    { id: 38, name: 'Floor Cleaner', hsn: '3402', price: 130.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 500, subproducts: []}
+    { id: 35, name: 'Cleaning Liquid', hsn: '3402', price: 110.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 400, subproducts: [] },
+    { id: 36, name: 'Phenyl', hsn: '3808', price: 85.00, unit: 'Ltr', cat: 'HOUSEHOLD PRODUCTS', stock: 600, subproducts: [] },
+    { id: 37, name: 'Dish Wash', hsn: '3402', price: 45.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 800, subproducts: [] },
+    { id: 38, name: 'Floor Cleaner', hsn: '3402', price: 130.00, unit: 'Pc', cat: 'HOUSEHOLD PRODUCTS', stock: 500, subproducts: [] }
   ]);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [showAddCustomerModal, setShowAddCustomerModal] = useState(false);
@@ -97,23 +97,35 @@ function App() {
   const [showAddProductModal, setShowAddProductModal] = useState(false);
   const [showEditProductModal, setShowEditProductModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  const [showEditUserModal, setShowEditUserModal] = useState(false);
+  const [editingUser, setEditingUser] = useState(null);
   const [expandedProductId, setExpandedProductId] = useState(null);
   const [productListViewMode, setProductListViewMode] = useState('table');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [productSearchTerm, setProductSearchTerm] = useState('');
   const [authMode, setAuthMode] = useState('login'); // 'login' or 'signup'
-  const [currentUser, setCurrentUser] = useState({ username: '', role: 'Admin' });
+  const [currentUser, setCurrentUser] = useState({ name: '', email: '', username: '', role: 'Admin', employeeId: '' });
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [companyInfo, setCompanyInfo] = useState({
+    name: 'SIKKO INDUSTRIES LTD',
+    address: 'Reg. Office: 508, ISCON ELEGANCE, NR. JAIN TEMPLE, PRAHLADNAGAR, S.G. HIGHWAY, AHMEDABAD-380015 (GUJARAT)',
+    gst: '24AAGCS0629C1ZT',
+    bank_name: 'ICICI BANK LTD.',
+    account_no: '423551000001',
+    ifsc: 'ICIC0004235',
+    branch: 'Makarba Ahmedabad (Gujarat)',
+    contact: '7069026163'
+  });
 
-  const inputStyle = { 
-    width: '100%', padding: '12px 12px 12px 50px', borderRadius: '12px', border: '2px solid #e2e8f0', 
-    background: '#f8fafc', outline: 'none', fontSize: '0.95rem', transition: 'all 0.2s' 
+  const inputStyle = {
+    width: '100%', padding: '12px 12px 12px 50px', borderRadius: '12px', border: '2px solid #e2e8f0',
+    background: '#f8fafc', outline: 'none', fontSize: '0.95rem', transition: 'all 0.2s'
   };
-  const btnStyle = { 
-    marginTop: '10px', padding: '14px', borderRadius: '12px', border: 'none', 
-    background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)', color: '#fff', 
-    fontWeight: '800', fontSize: '1rem', cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)', transition: 'all 0.3s' 
+  const btnStyle = {
+    marginTop: '10px', padding: '14px', borderRadius: '12px', border: 'none',
+    background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)', color: '#fff',
+    fontWeight: '800', fontSize: '1rem', cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)', transition: 'all 0.3s'
   };
   const handleFocus = e => { e.target.style.borderColor = '#2563eb'; e.target.style.background = '#fff'; };
   const handleBlur = e => { e.target.style.borderColor = '#e2e8f0'; e.target.style.background = '#f8fafc'; };
@@ -127,21 +139,98 @@ function App() {
       fetchCustomers();
       fetchProducts();
       fetchUsers();
+      fetchCompanyInfo();
     }
   }, [isLoggedIn]);
 
+  const fetchCompanyInfo = async () => {
+    try {
+      const res = await fetch('http://127.0.0.1:5001/api/company-info');
+      const data = await res.json();
+      if (data.name) setCompanyInfo(data);
+    } catch (e) { console.error('Error fetching company info:', e); }
+  };
+
+  useEffect(() => {
+    if (activeView === 'employeesView') fetchUsers();
+  }, [activeView]);
+
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users');
+      const res = await fetch('http://127.0.0.1:5001/api/users');
       const data = await res.json();
       if (Array.isArray(data)) setAllUsers(data);
-    } catch(e) { console.error('Error fetching users:', e); }
+    } catch (e) { console.error('Error fetching users:', e); }
+  };
+
+  useEffect(() => {
+    if (companyInfo.name) {
+      setFormData(prev => ({
+        ...prev,
+        companyName: companyInfo.name,
+        companyAddress: companyInfo.address,
+        companyGst: companyInfo.gst,
+        bankName: companyInfo.bank_name,
+        acNo: companyInfo.account_no,
+        ifscCode: companyInfo.ifsc,
+        branch: companyInfo.branch,
+        companyContact: companyInfo.contact
+      }));
+    }
+  }, [companyInfo]);
+
+  const [invoiceSearch, setInvoiceSearch] = useState('');
+  const [invoiceStatusFilter, setInvoiceStatusFilter] = useState('All');
+
+  const filteredHistoryInvoices = (currentUser.role === 'Admin' || currentUser.role === 'Accountant' ? invoices : invoices.filter(inv => inv.created_by === currentUser.username))
+    .filter(inv => {
+      const matchesSearch = inv.pi_number.toLowerCase().includes(invoiceSearch.toLowerCase()) ||
+        inv.client_name.toLowerCase().includes(invoiceSearch.toLowerCase());
+      const currentStatus = inv.status || 'Pending';
+      const matchesStatus = invoiceStatusFilter === 'All' || currentStatus.toLowerCase() === invoiceStatusFilter.toLowerCase();
+      return matchesSearch && matchesStatus;
+    });
+
+  const handleEditUser = (user) => {
+    setEditingUser({ ...user });
+    setShowEditUserModal(true);
+  };
+
+  const handleUpdateUser = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`http://127.0.0.1:5001/api/users/${editingUser.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editingUser)
+      });
+      if (res.ok) {
+        alert('Employee updated successfully!');
+        fetchUsers();
+        setShowEditUserModal(false);
+      } else {
+        const errorData = await res.json();
+        alert('Error: ' + (errorData.error || 'Unknown error'));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Network error: ' + err.message + '. Please ensure the backend server is running.');
+    }
+  };
+
+  const handleDeleteUser = async (id) => {
+    if (window.confirm('Are you sure you want to delete this employee?')) {
+      try {
+        const res = await fetch(`http://127.0.0.1:5001/api/users/${id}`, { method: 'DELETE' });
+        if (res.ok) fetchUsers();
+      } catch (err) { console.error(err); }
+    }
   };
 
   const fetchInvoices = async () => {
     try {
       console.log('Fetching invoices...');
-      const res = await fetch('http://localhost:5000/api/invoices');
+      const res = await fetch('http://127.0.0.1:5001/api/invoices');
       const data = await res.json();
       console.log('Invoices received:', data);
       if (Array.isArray(data)) {
@@ -153,7 +242,7 @@ function App() {
   };
 
   const handleDeleteCustomer = (id) => {
-    if(window.confirm('Are you sure you want to delete this customer?')) {
+    if (window.confirm('Are you sure you want to delete this customer?')) {
       setCustomers(customers.filter(c => c.id !== id));
     }
   };
@@ -167,17 +256,17 @@ function App() {
     e.preventDefault();
     try {
       if (editingCustomer.id) {
-        await fetch(`http://localhost:5000/api/customers/${editingCustomer.id}`, {
+        await fetch(`http://127.0.0.1:5001/api/customers/${editingCustomer.id}`, {
           method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editingCustomer)
         });
       }
       setCustomers(customers.map(c => c.id === editingCustomer.id ? editingCustomer : c));
       setShowEditCustomerModal(false);
-    } catch(err) { console.error(err); }
+    } catch (err) { console.error(err); }
   };
   const fetchCustomers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/customers');
+      const res = await fetch('http://127.0.0.1:5001/api/customers');
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
         setCustomers(prev => {
@@ -193,7 +282,7 @@ function App() {
   const fetchProducts = async () => {
     try {
       console.log('Fetching products...');
-      const res = await fetch('http://localhost:5000/api/products');
+      const res = await fetch('http://127.0.0.1:5001/api/products');
       const data = await res.json();
       console.log('Products received:', data);
       if (Array.isArray(data)) {
@@ -264,13 +353,13 @@ function App() {
 
   const { totalQty, totalTaxable, totalGstAmt, subTotal, finalAmt } = calculateTotals();
 
-  const filteredInvoices = currentUser.role === 'Admin' 
-    ? invoices 
+  const filteredInvoices = currentUser.role === 'Admin'
+    ? invoices
     : invoices.filter(inv => inv.created_by === currentUser.username);
 
   const numberToWords = (num) => {
-    const a = ['','ONE ','TWO ','THREE ','FOUR ', 'FIVE ','SIX ','SEVEN ','EIGHT ','NINE ','TEN ','ELEVEN ','TWELVE ','THIRTEEN ','FOURTEEN ','FIFTEEN ','SIXTEEN ','SEVENTEEN ','EIGHTEEN ','NINETEEN '];
-    const b = ['', '', 'TWENTY','THIRTY','FORTY','FIFTY', 'SIXTY','SEVENTY','EIGHTY','NINETY'];
+    const a = ['', 'ONE ', 'TWO ', 'THREE ', 'FOUR ', 'FIVE ', 'SIX ', 'SEVEN ', 'EIGHT ', 'NINE ', 'TEN ', 'ELEVEN ', 'TWELVE ', 'THIRTEEN ', 'FOURTEEN ', 'FIFTEEN ', 'SIXTEEN ', 'SEVENTEEN ', 'EIGHTEEN ', 'NINETEEN '];
+    const b = ['', '', 'TWENTY', 'THIRTY', 'FORTY', 'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY'];
     const regex = /^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/;
     const getWords = (n) => {
       let numStr = ('000000000' + n).substr(-9);
@@ -294,32 +383,45 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     const formDataObj = new FormData(e.target);
-    const username = formDataObj.get('username') || formDataObj.get('email');
+    const name = formDataObj.get('name');
+    const employeeId = formDataObj.get('employeeId');
+    const usernameInput = formDataObj.get('username');
     const password = formDataObj.get('password');
-    const role = formDataObj.get('role') || 'Admin';
+    const role = formDataObj.get('role');
 
     const endpoint = authMode === 'login' ? '/api/login' : '/api/signup';
-    
+
     try {
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+      const res = await fetch(`http://127.0.0.1:5001${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password, role })
+        body: JSON.stringify({
+          name,
+          employeeId,
+          username: usernameInput,
+          email: usernameInput, // Backend expects 'email' for login (even if it's a username)
+          password,
+          role
+        })
       });
-      
+
       const data = await res.json();
-      
+
       if (data.success) {
-        setCurrentUser({ 
-          username: data.user.username, 
-          role: data.user.role 
+        setCurrentUser({
+          id: data.user.id,
+          name: data.user.name,
+          email: data.user.email,
+          username: data.user.username,
+          role: data.user.role,
+          employeeId: data.user.employee_id
         });
         setIsLoggedIn(true);
         setActiveView('dashboardView');
       } else {
         alert(data.message || 'Login failed. Please check your credentials.');
       }
-    } catch(err) {
+    } catch (err) {
       console.error('Auth error:', err);
       alert('Connection error. Is the server running?');
     }
@@ -361,7 +463,7 @@ function App() {
   };
 
   const addProduct = () => setProducts([...products, { id: Date.now(), name: 'SIKKO FERT', hsn: '3105', pack: '200', unit: 'Ltr', qt: 1, qty: 200, price: 500, cgst: 9, sgst: 9, igst: 0 }]);
-  
+
   const updateProduct = (id, field, value) => {
     setProducts(prev => prev.map(p => p.id === id ? { ...p, [field]: value } : p));
   };
@@ -387,7 +489,7 @@ function App() {
     e.preventDefault();
     try {
       if (editingProduct.id) {
-        await fetch(`http://localhost:5000/api/products/${editingProduct.id}`, {
+        await fetch(`http://127.0.0.1:5001/api/products/${editingProduct.id}`, {
           method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editingProduct)
         });
       }
@@ -396,23 +498,57 @@ function App() {
     } catch (err) { console.error(err); }
   };
 
+  const loadInvoiceForView = async (id) => {
+    try {
+      const res = await fetch(`http://127.0.0.1:5001/api/invoices/${id}`);
+      if (!res.ok) throw new Error('Failed to fetch invoice');
+      const data = await res.json();
+      
+      // Map data to formData structure
+      setFormData({
+        ...formData,
+        piNumber: data.pi_number,
+        consigneeName: data.client_name,
+        // Other fields might need to be fetched from a more complex table, 
+        // but for now we'll load what we have.
+      });
+      
+      // Map items to products structure
+      const loadedProducts = data.items.map(item => ({
+        id: item.id,
+        name: item.product_name,
+        qty: item.qty,
+        price: item.price,
+        total: item.qty * item.price
+      }));
+      setProducts(loadedProducts);
+      setFinalAmt(data.total_amount);
+      
+      // Switch view
+      setActiveView('invoiceView');
+    } catch (err) {
+      console.error('Error loading invoice:', err);
+      alert('Could not load invoice details');
+    }
+  };
+
   const saveInvoice = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/save-invoice', {
+      const res = await fetch('http://127.0.0.1:5001/api/save-invoice', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ formData, products, finalAmt, created_by: currentUser.username })
       });
       const data = await res.json();
       if (data.message === 'Success') {
-        if(typeof fetchInvoices === 'function') fetchInvoices();
+        if (typeof fetchInvoices === 'function') fetchInvoices();
       }
     } catch (e) { console.error('Error saving invoice to MySQL'); }
   };
 
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/invoices/${id}/status`, {
+      const res = await fetch(`http://127.0.0.1:5001/api/invoices/${id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
@@ -427,7 +563,14 @@ function App() {
     const doPDF = () => {
       const element = document.getElementById('invoiceA4');
       if (!element) return;
-      const opt = { margin: 0, filename: `Invoice_${formData.piNumber || '001'}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+      const opt = {
+        margin: 0,
+        filename: `Invoice_${formData.piNumber || '001'}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, logging: false, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
       window.html2pdf().set(opt).from(element).save().then(() => {
         saveInvoice();
       });
@@ -444,11 +587,11 @@ function App() {
   // --- Render Login ---
   if (!isLoggedIn) {
     return (
-      <div style={{ 
-        height: '100vh', 
+      <div style={{
+        height: '100vh',
         width: '100vw',
-        display: 'flex', 
-        alignItems: 'center', 
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -461,10 +604,10 @@ function App() {
           zIndex: 0,
           overflow: 'hidden'
         }}>
-          <video 
-            autoPlay 
-            loop 
-            muted 
+          <video
+            autoPlay
+            loop
+            muted
             playsInline
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           >
@@ -478,13 +621,13 @@ function App() {
           zIndex: 1
         }}></div>
 
-        <div style={{ 
-          width: '100%', 
-          maxWidth: '480px', 
-          background: 'rgba(255, 255, 255, 0.25)', 
+        <div style={{
+          width: '100%',
+          maxWidth: '480px',
+          background: 'rgba(255, 255, 255, 0.25)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          padding: '40px 40px', 
+          padding: '40px 40px',
           borderRadius: '24px',
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)',
           textAlign: 'center',
@@ -495,10 +638,10 @@ function App() {
         }}>
           {/* Logo Section */}
           <div style={{ marginBottom: '25px' }}>
-            <img 
-              src={sikkoLogo} 
-              alt="Sikko Logo" 
-              style={{ height: '100px', width: '100px', objectFit: 'contain', borderRadius: '50%', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }} 
+            <img
+              src={sikkoLogo}
+              alt="Sikko Logo"
+              style={{ height: '100px', width: '100px', objectFit: 'contain', borderRadius: '50%', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
             />
           </div>
 
@@ -508,22 +651,32 @@ function App() {
           <p style={{ color: '#0f172a', fontSize: '0.95rem', marginBottom: '30px', fontWeight: '500' }}>SIKKO INDUSTRIES LTD - ERP Access</p>
 
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
-            
+
             {authMode === 'signup' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <label style={{ color: '#0f172a', fontSize: '0.85rem', fontWeight: '700' }}>Employee ID</label>
-                <div style={{ position: 'relative' }}>
-                  <i className="fa-solid fa-id-card" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
-                  <input type="text" name="employeeId" placeholder="EMP-XXXX" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+              <>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={{ color: '#0f172a', fontSize: '0.85rem', fontWeight: '700' }}>Full Name</label>
+                  <div style={{ position: 'relative' }}>
+                    <i className="fa-solid fa-user-tag" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
+                    <input type="text" name="name" placeholder="Enter Full Name" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+                  </div>
                 </div>
-              </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={{ color: '#0f172a', fontSize: '0.85rem', fontWeight: '700' }}>Employee ID</label>
+                  <div style={{ position: 'relative' }}>
+                    <i className="fa-solid fa-id-card" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
+                    <input type="text" name="employeeId" placeholder="EMP-XXXX" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+                  </div>
+                </div>
+              </>
             )}
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ color: '#0f172a', fontSize: '0.85rem', fontWeight: '700' }}>{authMode === 'login' ? 'Username' : 'Username/Email'}</label>
+              <label style={{ color: '#0f172a', fontSize: '0.85rem', fontWeight: '700' }}>{authMode === 'login' ? 'Username' : 'Email Address'}</label>
               <div style={{ position: 'relative' }}>
-                <i className={`fa-solid ${authMode === 'login' ? 'fa-user' : 'fa-user'}`} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
-                <input name="username" type="text" placeholder={authMode === 'login' ? 'Enter Username' : 'Choose Username'} required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+                <i className={`fa-solid ${authMode === 'login' ? 'fa-user' : 'fa-envelope'}`} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
+                <input name="username" type={authMode === 'login' ? 'text' : 'email'} placeholder={authMode === 'login' ? 'Enter Username' : 'Enter Email Address'} required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
               </div>
             </div>
 
@@ -542,8 +695,9 @@ function App() {
                   <i className="fa-solid fa-user-tag" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
                   <select name="role" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur}>
                     <option value="">Select Role</option>
-                    <option value="Admin">Administrator</option>
-                    <option value="Sales">Sales Executive</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Accountant">Accountant</option>
                   </select>
                 </div>
               </div>
@@ -557,7 +711,7 @@ function App() {
           <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid #f1f5f9' }}>
             <p style={{ color: '#0f172a', fontSize: '0.9rem', marginBottom: '10px' }}>
               {authMode === 'login' ? "Don't have an account?" : "Already have an account?"}
-              <button 
+              <button
                 onClick={() => setAuthMode(authMode === 'login' ? 'signup' : 'login')}
                 style={{ background: 'none', border: 'none', color: '#2563eb', fontWeight: '700', cursor: 'pointer', marginLeft: '8px' }}
               >
@@ -577,20 +731,29 @@ function App() {
       <aside className="sidebar">
         <div className="sidebar-logo" style={{ padding: '1.5rem 1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img src={sikkoLogo} alt="SIKKO Logo" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
-          <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#1e293b', lineHeight: '1.2' }}>SIKKO <br/> INDUSTRIES LTD</span>
+          <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#1e293b', lineHeight: '1.2' }}>SIKKO <br /> INDUSTRIES LTD</span>
         </div>
         <ul className="sidebar-nav">
           <li><a href="#" className={`nav-link ${activeView === 'dashboardView' ? 'active' : ''}`} onClick={() => changeView('dashboardView')}><i className="fa-solid fa-chart-pie"></i> Dashboard</a></li>
-          <li><a href="#" className={`nav-link ${activeView === 'invoiceView' ? 'active' : ''}`} onClick={() => changeView('invoiceView')}><i className="fa-solid fa-file-invoice"></i> Invoices</a></li>
-          <li><a href="#" className={`nav-link ${activeView === 'customersView' ? 'active' : ''}`} onClick={() => changeView('customersView')}><i className="fa-solid fa-users"></i> Customers</a></li>
-          <li><a href="#" className={`nav-link ${activeView === 'productsView' ? 'active' : ''}`} onClick={() => changeView('productsView')}><i className="fa-solid fa-box"></i> Products</a></li>
+          <li><a href="#" className={`nav-link ${activeView === 'invoiceView' ? 'active' : ''}`} onClick={() => changeView('invoiceView')}><i className="fa-solid fa-file-invoice"></i> Create Invoice</a></li>
+          {currentUser.role === 'Accountant' && (
+            <li><a href="#" className={`nav-link ${activeView === 'accountantInvoicesView' ? 'active' : ''}`} onClick={() => changeView('accountantInvoicesView')}><i className="fa-solid fa-file-shield"></i> Manage Invoices</a></li>
+          )}
+          <li><a href="#" className={`nav-link ${activeView === 'invoiceHistoryView' ? 'active' : ''}`} onClick={() => changeView('invoiceHistoryView')}><i className="fa-solid fa-clock-rotate-left"></i> Invoice History</a></li>
+          {currentUser.role === 'Admin' && (
+            <>
+              <li><a href="#" className={`nav-link ${activeView === 'customersView' ? 'active' : ''}`} onClick={() => changeView('customersView')}><i className="fa-solid fa-users"></i> Customers</a></li>
+              <li><a href="#" className={`nav-link ${activeView === 'productsView' ? 'active' : ''}`} onClick={() => changeView('productsView')}><i className="fa-solid fa-box"></i> Products</a></li>
+              <li><a href="#" className={`nav-link ${activeView === 'employeesView' ? 'active' : ''}`} onClick={() => changeView('employeesView')}><i className="fa-solid fa-user-gear"></i> Employees</a></li>
+            </>
+          )}
           <li><a href="#" className={`nav-link ${activeView === 'reportsView' ? 'active' : ''}`} onClick={() => changeView('reportsView')}><i className="fa-solid fa-chart-line"></i> Reports</a></li>
           <li><a href="#" className={`nav-link ${activeView === 'settingsView' ? 'active' : ''}`} onClick={() => changeView('settingsView')}><i className="fa-solid fa-gear"></i> Settings</a></li>
         </ul>
         <div className="sidebar-footer" style={{ marginTop: 'auto', padding: '1rem', borderTop: '1px solid #f1f5f9' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#f8fafc', padding: '10px', borderRadius: '12px' }}>
-            <div style={{ 
-              width: '38px', height: '38px', borderRadius: '10px', background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)', 
+            <div style={{
+              width: '38px', height: '38px', borderRadius: '10px', background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: '700', fontSize: '0.9rem',
               boxShadow: '0 4px 6px -1px rgba(79, 70, 229, 0.2)'
             }}>
@@ -604,9 +767,9 @@ function App() {
                 {currentUser.role}
               </div>
             </div>
-            <button 
-              className="logout-btn-minimal" 
-              onClick={handleLogout} 
+            <button
+              className="logout-btn-minimal"
+              onClick={handleLogout}
               style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '5px', transition: 'all 0.2s' }}
               onMouseOver={(e) => e.currentTarget.style.color = '#ef4444'}
               onMouseOut={(e) => e.currentTarget.style.color = '#94a3b8'}
@@ -634,13 +797,15 @@ function App() {
                 </div>
               </header>
               <div className="view-body" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                
+
                 {/* Quick Actions */}
-                <div className="quick-actions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '1rem' }}>
-                  <div className="action-card card-hover" onClick={() => setShowAddCustomerModal(true)} style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <div style={{ background: '#e0e7ff', color: '#4f46e5', padding: '15px', borderRadius: '50%' }}><i className="fa-solid fa-user-plus fa-lg"></i></div>
-                    <div><h4 style={{ margin: 0, fontSize: '1.1rem' }}>Add Customer</h4><p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Add a new client to your directory</p></div>
-                  </div>
+                <div className="quick-actions-grid" style={{ display: 'grid', gridTemplateColumns: currentUser.role === 'Admin' ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '1rem' }}>
+                  {currentUser.role === 'Admin' && (
+                    <div className="action-card card-hover" onClick={() => setShowAddCustomerModal(true)} style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                      <div style={{ background: '#e0e7ff', color: '#4f46e5', padding: '15px', borderRadius: '50%' }}><i className="fa-solid fa-user-plus fa-lg"></i></div>
+                      <div><h4 style={{ margin: 0, fontSize: '1.1rem' }}>Add Customer</h4><p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Add a new client to your directory</p></div>
+                    </div>
+                  )}
                   <div className="action-card card-hover" onClick={() => changeView('invoiceView')} style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '15px' }}>
                     <div style={{ background: '#fef3c7', color: '#d97706', padding: '15px', borderRadius: '50%' }}><i className="fa-solid fa-file-invoice fa-lg"></i></div>
                     <div><h4 style={{ margin: 0, fontSize: '1.1rem' }}>Create Invoice</h4><p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Generate a new proforma invoice</p></div>
@@ -652,33 +817,47 @@ function App() {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
-                  <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <i className="fa-solid fa-users" style={{ color: '#3b82f6', fontSize: '1.5rem' }}></i>
+                <div className="stats-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gap: '1.5rem'
+                }}>
+                  {currentUser.role === 'Admin' && (
+                    <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-user-tie" style={{ color: '#6366f1', fontSize: '1.5rem' }}></i></div>
+                      <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{allUsers.length}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Total Users</p>
                     </div>
-                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{customers.length}</h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Customers</p>
+                  )}
+                  {(currentUser.role === 'Admin' || currentUser.role === 'Accountant' || currentUser.role === 'Sales') && (
+                    <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-users" style={{ color: '#3b82f6', fontSize: '1.5rem' }}></i></div>
+                      <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{customers.length}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Total Clients</p>
+                    </div>
+                  )}
+                  {(currentUser.role === 'Admin' || currentUser.role === 'Accountant') && (
+                    <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-box-open" style={{ color: '#d97706', fontSize: '1.5rem' }}></i></div>
+                      <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{masterProducts.length}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Total Products</p>
+                    </div>
+                  )}
+                  {currentUser.role === 'Sales' && (
+                    <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-cart-shopping" style={{ color: '#d97706', fontSize: '1.5rem' }}></i></div>
+                      <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{invoices.filter(i => i.created_by === currentUser.username).length}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Products Sold</p>
+                    </div>
+                  )}
+                  <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-file-invoice" style={{ color: '#8b5cf6', fontSize: '1.5rem' }}></i></div>
+                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{currentUser.role === 'Admin' || currentUser.role === 'Accountant' ? invoices.length : invoices.filter(i => i.created_by === currentUser.username).length}</h3>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Total Invoices</p>
                   </div>
                   <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <i className="fa-solid fa-box-open" style={{ color: '#d97706', fontSize: '1.5rem' }}></i>
-                    </div>
-                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{masterProducts.length}</h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Products</p>
-                  </div>
-                  <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <i className="fa-solid fa-file-invoice" style={{ color: '#8b5cf6', fontSize: '1.5rem' }}></i>
-                    </div>
-                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{filteredInvoices.length}</h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Invoices</p>
-                  </div>
-                  <div className="stat-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <i className="fa-solid fa-sack-dollar" style={{ color: '#10b981', fontSize: '1.5rem' }}></i>
-                    </div>
-                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>₹ {filteredInvoices.reduce((s,i)=>s+parseFloat(i.total_amount),0).toLocaleString('en-IN', {minimumFractionDigits:2})}</h3>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><i className="fa-solid fa-sack-dollar" style={{ color: '#10b981', fontSize: '1.5rem' }}></i></div>
+                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>₹ {(currentUser.role === 'Admin' || currentUser.role === 'Accountant' ? invoices : invoices.filter(i => i.created_by === currentUser.username)).reduce((s, i) => s + parseFloat(i.total_amount), 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, textTransform: 'uppercase', fontWeight: '600' }}>Total Revenue</p>
                   </div>
                 </div>
@@ -701,9 +880,9 @@ function App() {
                           { name: 'Jun', sales: 9000 },
                         ]}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
-                          <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
-                          <Tooltip 
+                          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                          <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                          <Tooltip
                             contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
                             cursor={{ fill: '#f1f5f9' }}
                           />
@@ -735,7 +914,7 @@ function App() {
                             paddingAngle={5}
                             dataKey="value"
                           >
-                            {[ '#6366f1', '#10b981', '#f59e0b', '#ef4444' ].map((color, index) => (
+                            {['#6366f1', '#10b981', '#f59e0b', '#ef4444'].map((color, index) => (
                               <Cell key={`cell-${index}`} fill={color} />
                             ))}
                           </Pie>
@@ -769,16 +948,16 @@ function App() {
                             <td style={{ padding: '1rem', fontWeight: '500' }}>{inv.pi_number}</td>
                             <td style={{ padding: '1rem', color: '#64748b' }}>{new Date(inv.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                             <td style={{ padding: '1rem' }}>{inv.client_name}</td>
-                            <td style={{ padding: '1rem', fontWeight: '600' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
+                            <td style={{ padding: '1rem', fontWeight: '600' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
                             <td style={{ padding: '1rem' }}>
-                               <span style={{ 
-                                 background: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#dcfce7' : (inv.status || '').toUpperCase() === 'PENDING' ? '#fef3c7' : '#f1f5f9', 
-                                 color: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#166534' : (inv.status || '').toUpperCase() === 'PENDING' ? '#92400e' : '#475569', 
-                                 padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '600' 
-                               }}>
-                                 {(inv.status || 'PAID').toUpperCase()}
-                               </span>
-                             </td>
+                              <span style={{
+                                background: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#dcfce7' : (inv.status || '').toUpperCase() === 'PENDING' ? '#fef3c7' : '#f1f5f9',
+                                color: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#166534' : (inv.status || '').toUpperCase() === 'PENDING' ? '#92400e' : '#475569',
+                                padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '600'
+                              }}>
+                                {(inv.status || 'PAID').toUpperCase()}
+                              </span>
+                            </td>
                           </tr>
                         ))}
                         {invoices.length === 0 && <tr><td colSpan="5" className="text-center text-muted" style={{ padding: '2rem' }}>No recent invoices found.</td></tr>}
@@ -790,6 +969,132 @@ function App() {
               </div>
             </section>
           )}
+
+          {activeView === 'invoiceHistoryView' && (
+            <section className="view-section">
+              <header className="top-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}><i className="fa-solid fa-clock-rotate-left" style={{ marginRight: '10px', color: '#6366f1' }}></i>Invoice History</h2>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <div style={{ position: 'relative' }}>
+                    <i className="fa-solid fa-magnifying-glass" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}></i>
+                    <input type="text" placeholder="Search Invoices..." value={invoiceSearch} onChange={e => setInvoiceSearch(e.target.value)} style={{ padding: '8px 12px 8px 35px', borderRadius: '8px', border: '1px solid #e2e8f0', width: '250px' }} />
+                  </div>
+                  <select value={invoiceStatusFilter} onChange={e => setInvoiceStatusFilter(e.target.value)} style={{ padding: '8px 12px', borderRadius: '8px', border: '1px solid #e2e8f0', background: '#fff' }}>
+                    <option value="All">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Declined">Declined</option>
+                  </select>
+                </div>
+              </header>
+              <div className="view-body">
+                <div className="form-card">
+                  <div className="table-responsive">
+                    <table className="clean-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.85rem', textAlign: 'left', textTransform: 'uppercase' }}>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Invoice No.</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Date</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Customer</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Amount</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Created By</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Status</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {filteredHistoryInvoices.map(inv => (
+                          <tr key={inv.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                            <td style={{ padding: '1rem', fontWeight: '500' }}>{inv.pi_number}</td>
+                            <td style={{ padding: '1rem', color: '#64748b' }}>{new Date(inv.created_at).toLocaleDateString('en-GB')}</td>
+                            <td style={{ padding: '1rem' }}>{inv.client_name}</td>
+                            <td style={{ padding: '1rem', fontWeight: '600' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                            <td style={{ padding: '1rem', fontSize: '0.85rem' }}>{inv.created_by}</td>
+                            <td style={{ padding: '1rem' }}>
+                              <span style={{
+                                background: inv.status === 'Approved' ? '#dcfce7' : inv.status === 'Declined' ? '#fee2e2' : '#fef3c7',
+                                color: inv.status === 'Approved' ? '#166534' : inv.status === 'Declined' ? '#991b1b' : '#92400e',
+                                padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '600'
+                              }}>
+                                {inv.status || 'Pending'}
+                              </span>
+                            </td>
+                            <td style={{ padding: '1rem' }}>
+                              {inv.status === 'Approved' && (
+                                <button className="btn btn-secondary" style={{ padding: '5px 10px', fontSize: '0.8rem', background: '#eff6ff', color: '#2563eb', border: '1px solid #dbeafe' }} onClick={() => {
+                                  setFormData({ ...formData, piNumber: inv.pi_number, consigneeName: inv.client_name });
+                                  setShowPreviewModal(true);
+                                }}>
+                                  <i className="fa-solid fa-download"></i> PDF
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {activeView === 'accountantInvoicesView' && (
+            <section className="view-section">
+              <header className="top-header">
+                <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}><i className="fa-solid fa-file-shield" style={{ marginRight: '10px', color: '#0ea5e9' }}></i>Invoice Management (Accountant Review)</h2>
+              </header>
+              <div className="view-body">
+                <div className="form-card">
+                  <div className="table-responsive">
+                    <table className="clean-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.85rem', textAlign: 'left', textTransform: 'uppercase' }}>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Invoice No.</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Date</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Customer</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Amount</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Sales Person</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Current Status</th>
+                          <th style={{ padding: '1rem', fontWeight: '600' }}>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {invoices.map(inv => (
+                          <tr key={inv.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                            <td style={{ padding: '1rem', fontWeight: '500' }}>{inv.pi_number}</td>
+                            <td style={{ padding: '1rem', color: '#64748b' }}>{new Date(inv.created_at).toLocaleDateString('en-GB')}</td>
+                            <td style={{ padding: '1rem' }}>{inv.client_name}</td>
+                            <td style={{ padding: '1rem', fontWeight: '600' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                            <td style={{ padding: '1rem' }}>{inv.created_by}</td>
+                            <td style={{ padding: '1rem' }}>
+                              <span style={{
+                                background: inv.status === 'Approved' ? '#dcfce7' : inv.status === 'Declined' ? '#fee2e2' : '#fef3c7',
+                                color: inv.status === 'Approved' ? '#166534' : inv.status === 'Declined' ? '#991b1b' : '#92400e',
+                                padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '600'
+                              }}>
+                                {inv.status || 'Pending'}
+                              </span>
+                            </td>
+                            <td style={{ padding: '1rem' }}>
+                              {inv.status === 'Pending' && (
+                                <div style={{ display: 'flex', gap: '5px' }}>
+                                  <button className="btn btn-primary" style={{ padding: '5px 10px', fontSize: '0.75rem', background: '#059669' }} onClick={() => handleStatusUpdate(inv.id, 'Approved')}>Approve</button>
+                                  <button className="btn btn-danger" style={{ padding: '5px 10px', fontSize: '0.75rem', background: '#dc2626' }} onClick={() => handleStatusUpdate(inv.id, 'Declined')}>Decline</button>
+                                </div>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+
 
           {activeView === 'customersView' && (
             <section className="view-section">
@@ -857,12 +1162,12 @@ function App() {
                 </div>
               </header>
               <div className="view-body" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '1rem' }}>
-                
+
                 {/* Categories Grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
-                  <div 
+                  <div
                     onClick={() => setSelectedCategory('ALL')}
-                    style={{ background: selectedCategory === 'ALL' ? '#f0f9ff' : 'var(--bg)', border: selectedCategory === 'ALL' ? '2px solid #0ea5e9' : '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', display: 'flex', alignItems: 'center', gap: '15px', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 2px 5px rgba(0,0,0,0.02)' }} 
+                    style={{ background: selectedCategory === 'ALL' ? '#f0f9ff' : 'var(--bg)', border: selectedCategory === 'ALL' ? '2px solid #0ea5e9' : '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', display: 'flex', alignItems: 'center', gap: '15px', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 2px 5px rgba(0,0,0,0.02)' }}
                     className="card-hover"
                   >
                     <div style={{ color: '#64748b', fontSize: '1.2rem' }}><i className="fa-solid fa-list"></i></div>
@@ -881,14 +1186,14 @@ function App() {
                     { title: 'FMCG PRODUCTS', icon: 'fa-cart-shopping', color: '#9ca3af' },
                     { title: 'HOUSEHOLD PRODUCTS', icon: 'fa-house', color: '#d97706' }
                   ].map((cat, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       onClick={() => setSelectedCategory(cat.title)}
-                      style={{ 
-                        background: selectedCategory === cat.title ? '#f0f9ff' : 'var(--bg)', 
-                        border: selectedCategory === cat.title ? `2px solid ${cat.color}` : '1px solid #e2e8f0', 
-                        borderRadius: '12px', padding: '15px', display: 'flex', alignItems: 'flex-start', gap: '15px', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 2px 5px rgba(0,0,0,0.02)' 
-                      }} 
+                      style={{
+                        background: selectedCategory === cat.title ? '#f0f9ff' : 'var(--bg)',
+                        border: selectedCategory === cat.title ? `2px solid ${cat.color}` : '1px solid #e2e8f0',
+                        borderRadius: '12px', padding: '15px', display: 'flex', alignItems: 'flex-start', gap: '15px', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 2px 5px rgba(0,0,0,0.02)'
+                      }}
                       className="card-hover"
                     >
                       <div style={{ color: cat.color, fontSize: '1.2rem', marginTop: '2px' }}><i className={`fa-solid ${cat.icon}`}></i></div>
@@ -904,16 +1209,22 @@ function App() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg)', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '10px 15px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '300px' }}>
                     <i className="fa-solid fa-magnifying-glass" style={{ color: '#0ea5e9' }}></i>
-                    <input type="text" placeholder="Search products..." style={{ border: 'none', outline: 'none', width: '100%', fontSize: '0.9rem', color: '#475569' }} />
+                    <input
+                      type="text"
+                      placeholder="Search products by name or category..."
+                      style={{ border: 'none', outline: 'none', width: '100%', fontSize: '0.9rem', color: '#475569' }}
+                      value={productSearchTerm}
+                      onChange={e => setProductSearchTerm(e.target.value)}
+                    />
                   </div>
                   <div style={{ display: 'flex', background: '#f1f5f9', borderRadius: '8px', padding: '4px' }}>
-                    <button 
+                    <button
                       onClick={() => setProductListViewMode('table')}
                       style={{ background: productListViewMode === 'table' ? '#fff' : 'transparent', border: 'none', padding: '5px 15px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', color: productListViewMode === 'table' ? '#334155' : '#64748b', boxShadow: productListViewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none', cursor: 'pointer' }}
                     >
                       <i className="fa-solid fa-table" style={{ marginRight: '5px' }}></i> Table
                     </button>
-                    <button 
+                    <button
                       onClick={() => setProductListViewMode('grid')}
                       style={{ background: productListViewMode === 'grid' ? '#fff' : 'transparent', border: 'none', padding: '5px 15px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', color: productListViewMode === 'grid' ? '#334155' : '#64748b', boxShadow: productListViewMode === 'grid' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none', cursor: 'pointer' }}
                     >
@@ -940,58 +1251,63 @@ function App() {
                         </thead>
                         <tbody>
                           {masterProducts
-                            .filter(p => selectedCategory === 'ALL' || p.cat === selectedCategory)
+                            .filter(p => {
+                              const matchesCat = selectedCategory === 'ALL' || p.cat === selectedCategory;
+                              const matchesSearch = p.name.toLowerCase().includes(productSearchTerm.toLowerCase()) ||
+                                p.cat.toLowerCase().includes(productSearchTerm.toLowerCase());
+                              return matchesCat && matchesSearch;
+                            })
                             .map((prod) => (
-                            <Fragment key={prod.id}>
-                              <tr style={{ borderBottom: '1px solid #f1f5f9', background: expandedProductId === prod.id ? '#f8faff' : '#fff', cursor: 'pointer' }} onClick={() => setExpandedProductId(expandedProductId === prod.id ? null : prod.id)}>
-                                <td style={{ padding: '15px 20px' }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className={`fa-solid ${expandedProductId === prod.id ? 'fa-chevron-down' : 'fa-chevron-right'}`} style={{ color: '#64748b', fontSize: '0.8rem' }}></i>
-                                    <i className="fa-solid fa-box" style={{ color: '#6366f1', fontSize: '1.2rem' }}></i>
-                                    <div>
-                                      <div style={{ fontWeight: '600', color: '#1e293b', fontSize: '0.95rem' }}>{prod.name}</div>
-                                      <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '2px' }}>{prod.desc || 'General Product'}</div>
-                                    </div>
-                                  </div>
-                                </td>
-                                <td style={{ padding: '15px 20px', color: '#64748b', fontSize: '0.9rem' }}>{prod.hsn}</td>
-                                <td style={{ padding: '15px 20px', fontWeight: '700', color: '#059669', fontSize: '0.95rem' }}>₹{Number(prod.price || 0).toFixed(2)}</td>
-                                <td style={{ padding: '15px 20px', color: '#64748b', fontSize: '0.9rem' }}>{prod.unit}</td>
-                                <td style={{ padding: '15px 20px', fontSize: '0.85rem' }}><span style={{ color: '#2563eb', fontWeight: '500' }}>{prod.cat}</span></td>
-                                <td style={{ padding: '15px 20px', color: '#475569', fontWeight: '500', fontSize: '0.95rem' }}>{prod.stock || 0}</td>
-                                <td style={{ padding: '15px 20px', textAlign: 'right' }}>
-                                  <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }} onClick={e => e.stopPropagation()}>
-                                    <button onClick={() => handleEditProductMaster(prod)} style={{ background: '#f1f5f9', border: 'none', padding: '6px 12px', borderRadius: '6px', fontSize: '0.8rem', fontWeight: '600', color: '#475569', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}><i className="fa-solid fa-pen-to-square"></i> Edit</button>
-                                    <button onClick={() => handleDeleteProductMaster(prod.id)} style={{ background: '#fee2e2', border: 'none', padding: '6px 10px', borderRadius: '6px', fontSize: '0.8rem', color: '#ef4444', cursor: 'pointer' }}><i className="fa-solid fa-trash-can"></i></button>
-                                  </div>
-                                </td>
-                              </tr>
-                              {expandedProductId === prod.id && prod.subproducts && prod.subproducts.length > 0 && (
-                                <tr style={{ background: '#f8faff' }}>
-                                  <td colSpan="7" style={{ padding: '0 20px 20px 60px' }}>
-                                    <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
-                                      <h4 style={{ margin: '0 0 15px 0', fontSize: '0.9rem', color: '#1e293b', fontWeight: '700' }}>Product Variations (Packing Options)</h4>
-                                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '15px' }}>
-                                        {prod.subproducts.map(sub => (
-                                          <div key={sub.id} style={{ border: '1px solid #f1f5f9', borderRadius: '10px', padding: '12px', background: '#f8fafc' }}>
-                                            <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: '600' }}>Size: {sub.pack}</div>
-                                            <div style={{ fontSize: '1.1rem', color: '#059669', fontWeight: '800', marginTop: '5px' }}>₹{Number(sub.price || 0).toFixed(2)}</div>
-                                            <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'flex-end' }}>
-                                              <button className="btn-clean-delete" style={{ padding: '5px' }}><i className="fa-solid fa-trash-can"></i></button>
-                                            </div>
-                                          </div>
-                                        ))}
-                                        <div style={{ border: '2px dashed #e2e8f0', borderRadius: '10px', padding: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#94a3b8' }}>
-                                          <i className="fa-solid fa-plus" style={{ marginBottom: '5px' }}></i>
-                                          <span style={{ fontSize: '0.75rem', fontWeight: '600' }}>Add Size</span>
-                                        </div>
+                              <Fragment key={prod.id}>
+                                <tr style={{ borderBottom: '1px solid #f1f5f9', background: expandedProductId === prod.id ? '#f8faff' : '#fff', cursor: 'pointer' }} onClick={() => setExpandedProductId(expandedProductId === prod.id ? null : prod.id)}>
+                                  <td style={{ padding: '15px 20px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                                      <i className={`fa-solid ${expandedProductId === prod.id ? 'fa-chevron-down' : 'fa-chevron-right'}`} style={{ color: '#64748b', fontSize: '0.8rem' }}></i>
+                                      <i className="fa-solid fa-box" style={{ color: '#6366f1', fontSize: '1.2rem' }}></i>
+                                      <div>
+                                        <div style={{ fontWeight: '600', color: '#1e293b', fontSize: '0.95rem' }}>{prod.name}</div>
+                                        <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '2px' }}>{prod.desc || 'General Product'}</div>
                                       </div>
                                     </div>
                                   </td>
+                                  <td style={{ padding: '15px 20px', color: '#64748b', fontSize: '0.9rem' }}>{prod.hsn}</td>
+                                  <td style={{ padding: '15px 20px', fontWeight: '700', color: '#059669', fontSize: '0.95rem' }}>₹{Number(prod.price || 0).toFixed(2)}</td>
+                                  <td style={{ padding: '15px 20px', color: '#64748b', fontSize: '0.9rem' }}>{prod.unit}</td>
+                                  <td style={{ padding: '15px 20px', fontSize: '0.85rem' }}><span style={{ color: '#2563eb', fontWeight: '500' }}>{prod.cat}</span></td>
+                                  <td style={{ padding: '15px 20px', color: '#475569', fontWeight: '500', fontSize: '0.95rem' }}>{prod.stock || 0}</td>
+                                  <td style={{ padding: '15px 20px', textAlign: 'right' }}>
+                                    <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }} onClick={e => e.stopPropagation()}>
+                                      <button onClick={() => handleEditProductMaster(prod)} style={{ background: '#f1f5f9', border: 'none', padding: '6px 12px', borderRadius: '6px', fontSize: '0.8rem', fontWeight: '600', color: '#475569', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}><i className="fa-solid fa-pen-to-square"></i> Edit</button>
+                                      <button onClick={() => handleDeleteProductMaster(prod.id)} style={{ background: '#fee2e2', border: 'none', padding: '6px 10px', borderRadius: '6px', fontSize: '0.8rem', color: '#ef4444', cursor: 'pointer' }}><i className="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                  </td>
                                 </tr>
-                              )}
-                            </Fragment>
-                          ))}
+                                {expandedProductId === prod.id && prod.subproducts && prod.subproducts.length > 0 && (
+                                  <tr style={{ background: '#f8faff' }}>
+                                    <td colSpan="7" style={{ padding: '0 20px 20px 60px' }}>
+                                      <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
+                                        <h4 style={{ margin: '0 0 15px 0', fontSize: '0.9rem', color: '#1e293b', fontWeight: '700' }}>Product Variations (Packing Options)</h4>
+                                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '15px' }}>
+                                          {prod.subproducts.map(sub => (
+                                            <div key={sub.id} style={{ border: '1px solid #f1f5f9', borderRadius: '10px', padding: '12px', background: '#f8fafc' }}>
+                                              <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: '600' }}>Size: {sub.pack}</div>
+                                              <div style={{ fontSize: '1.1rem', color: '#059669', fontWeight: '800', marginTop: '5px' }}>₹{Number(sub.price || 0).toFixed(2)}</div>
+                                              <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'flex-end' }}>
+                                                <button className="btn-clean-delete" style={{ padding: '5px' }}><i className="fa-solid fa-trash-can"></i></button>
+                                              </div>
+                                            </div>
+                                          ))}
+                                          <div style={{ border: '2px dashed #e2e8f0', borderRadius: '10px', padding: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#94a3b8' }}>
+                                            <i className="fa-solid fa-plus" style={{ marginBottom: '5px' }}></i>
+                                            <span style={{ fontSize: '0.75rem', fontWeight: '600' }}>Add Size</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                )}
+                              </Fragment>
+                            ))}
                         </tbody>
                       </table>
                     </div>
@@ -999,47 +1315,52 @@ function App() {
                 ) : (
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
                     {masterProducts
-                      .filter(p => selectedCategory === 'ALL' || p.cat === selectedCategory)
+                      .filter(p => {
+                        const matchesCat = selectedCategory === 'ALL' || p.cat === selectedCategory;
+                        const matchesSearch = p.name.toLowerCase().includes(productSearchTerm.toLowerCase()) ||
+                          p.cat.toLowerCase().includes(productSearchTerm.toLowerCase());
+                        return matchesCat && matchesSearch;
+                      })
                       .map(prod => (
-                      <div key={prod.id} className="form-card card-hover" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '15px', position: 'relative' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                          <div style={{ background: '#f0f9ff', padding: '10px', borderRadius: '12px' }}>
-                            <i className="fa-solid fa-box" style={{ color: '#0ea5e9', fontSize: '1.5rem' }}></i>
+                        <div key={prod.id} className="form-card card-hover" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '15px', position: 'relative' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                            <div style={{ background: '#f0f9ff', padding: '10px', borderRadius: '12px' }}>
+                              <i className="fa-solid fa-box" style={{ color: '#0ea5e9', fontSize: '1.5rem' }}></i>
+                            </div>
+                            <div style={{ display: 'flex', gap: '5px' }}>
+                              <button onClick={() => handleEditProductMaster(prod)} style={{ background: '#f1f5f9', border: 'none', width: '32px', height: '32px', borderRadius: '8px', cursor: 'pointer', color: '#475569' }}><i className="fa-solid fa-pen-to-square"></i></button>
+                              <button onClick={() => handleDeleteProductMaster(prod.id)} style={{ background: '#fee2e2', border: 'none', width: '32px', height: '32px', borderRadius: '8px', cursor: 'pointer', color: '#ef4444' }}><i className="fa-solid fa-trash-can"></i></button>
+                            </div>
                           </div>
-                          <div style={{ display: 'flex', gap: '5px' }}>
-                            <button onClick={() => handleEditProductMaster(prod)} style={{ background: '#f1f5f9', border: 'none', width: '32px', height: '32px', borderRadius: '8px', cursor: 'pointer', color: '#475569' }}><i className="fa-solid fa-pen-to-square"></i></button>
-                            <button onClick={() => handleDeleteProductMaster(prod.id)} style={{ background: '#fee2e2', border: 'none', width: '32px', height: '32px', borderRadius: '8px', cursor: 'pointer', color: '#ef4444' }}><i className="fa-solid fa-trash-can"></i></button>
+                          <div>
+                            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1e293b' }}>{prod.name}</div>
+                            <div style={{ fontSize: '0.8rem', color: '#94a3b8', margin: '5px 0' }}>{prod.cat}</div>
+                            <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                              <span style={{ background: '#f1f5f9', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '600', color: '#475569' }}>HSN: {prod.hsn}</span>
+                              <span style={{ background: '#dcfce7', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '600', color: '#166534' }}>Stock: {prod.stock || 0}</span>
+                            </div>
                           </div>
+                          <div style={{ marginTop: 'auto', paddingTop: '15px', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#059669' }}>₹{Number(prod.price || 0).toFixed(2)}</div>
+                            <button
+                              onClick={() => setExpandedProductId(expandedProductId === prod.id ? null : prod.id)}
+                              style={{ background: 'transparent', border: 'none', color: '#2563eb', fontWeight: '600', fontSize: '0.85rem', cursor: 'pointer' }}
+                            >
+                              {prod.subproducts?.length || 0} Variations <i className={`fa-solid ${expandedProductId === prod.id ? 'fa-chevron-up' : 'fa-chevron-down'}`} style={{ marginLeft: '5px' }}></i>
+                            </button>
+                          </div>
+                          {expandedProductId === prod.id && prod.subproducts?.length > 0 && (
+                            <div style={{ marginTop: '10px', background: '#f8fafc', borderRadius: '8px', padding: '10px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                              {prod.subproducts.map(sub => (
+                                <div key={sub.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', padding: '5px 0', borderBottom: '1px solid #e2e8f0' }}>
+                                  <span style={{ color: '#475569' }}>{sub.pack}</span>
+                                  <span style={{ fontWeight: '700', color: '#1e293b' }}>₹{Number(sub.price || 0).toFixed(2)}</span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
-                        <div>
-                          <div style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1e293b' }}>{prod.name}</div>
-                          <div style={{ fontSize: '0.8rem', color: '#94a3b8', margin: '5px 0' }}>{prod.cat}</div>
-                          <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-                            <span style={{ background: '#f1f5f9', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '600', color: '#475569' }}>HSN: {prod.hsn}</span>
-                            <span style={{ background: '#dcfce7', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '600', color: '#166534' }}>Stock: {prod.stock || 0}</span>
-                          </div>
-                        </div>
-                        <div style={{ marginTop: 'auto', paddingTop: '15px', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#059669' }}>₹{Number(prod.price || 0).toFixed(2)}</div>
-                          <button 
-                            onClick={() => setExpandedProductId(expandedProductId === prod.id ? null : prod.id)}
-                            style={{ background: 'transparent', border: 'none', color: '#2563eb', fontWeight: '600', fontSize: '0.85rem', cursor: 'pointer' }}
-                          >
-                            {prod.subproducts?.length || 0} Variations <i className={`fa-solid ${expandedProductId === prod.id ? 'fa-chevron-up' : 'fa-chevron-down'}`} style={{ marginLeft: '5px' }}></i>
-                          </button>
-                        </div>
-                        {expandedProductId === prod.id && prod.subproducts?.length > 0 && (
-                          <div style={{ marginTop: '10px', background: '#f8fafc', borderRadius: '8px', padding: '10px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                            {prod.subproducts.map(sub => (
-                              <div key={sub.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', padding: '5px 0', borderBottom: '1px solid #e2e8f0' }}>
-                                <span style={{ color: '#475569' }}>{sub.pack}</span>
-                                <span style={{ fontWeight: '700', color: '#1e293b' }}>₹{Number(sub.price || 0).toFixed(2)}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                      ))}
                   </div>
                 )}
 
@@ -1054,12 +1375,12 @@ function App() {
                 <h2 style={{ fontSize: '1.5rem', fontWeight: '700', margin: 0, color: '#1e293b' }}>Reports</h2>
               </header>
               <div className="view-body" style={{ marginTop: '1.5rem' }}>
-                
+
                 {/* Stats Grid for Reports */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
                   <div className="stat-card" style={{ padding: '1.5rem', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '15px' }}>
                     <div style={{ color: '#d97706', marginBottom: '10px' }}><i className="fa-solid fa-sack-dollar fa-xl"></i></div>
-                    <div style={{ fontSize: '1.5rem', fontWeight: '800', color: '#1e293b' }}>₹ {invoices.reduce((s,i)=>s+parseFloat(i.total_amount),0).toLocaleString('en-IN', {minimumFractionDigits:2})}</div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: '800', color: '#1e293b' }}>₹ {invoices.reduce((s, i) => s + parseFloat(i.total_amount), 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
                     <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: '700', textTransform: 'uppercase', marginTop: '5px' }}>Total Revenue</div>
                   </div>
                   <div className="stat-card" style={{ padding: '1.5rem', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '15px' }}>
@@ -1081,39 +1402,39 @@ function App() {
 
                 {/* Tabs */}
                 <div style={{ display: 'flex', gap: '30px', borderBottom: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
-                  <div 
+                  <div
                     onClick={() => setReportTab('invoices')}
-                    style={{ 
-                      padding: '10px 5px', 
-                      color: reportTab === 'invoices' ? '#2563eb' : '#64748b', 
-                      fontWeight: reportTab === 'invoices' ? '700' : '500', 
-                      borderBottom: reportTab === 'invoices' ? '3px solid #2563eb' : 'none', 
+                    style={{
+                      padding: '10px 5px',
+                      color: reportTab === 'invoices' ? '#2563eb' : '#64748b',
+                      fontWeight: reportTab === 'invoices' ? '700' : '500',
+                      borderBottom: reportTab === 'invoices' ? '3px solid #2563eb' : 'none',
                       cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
                       transition: 'all 0.3s'
                     }}
                   >
                     <i className="fa-solid fa-file-lines"></i> All Invoices
                   </div>
-                  <div 
+                  <div
                     onClick={() => setReportTab('purchases')}
-                    style={{ 
-                      padding: '10px 5px', 
-                      color: reportTab === 'purchases' ? '#2563eb' : '#64748b', 
-                      fontWeight: reportTab === 'purchases' ? '700' : '500', 
-                      borderBottom: reportTab === 'purchases' ? '3px solid #2563eb' : 'none', 
+                    style={{
+                      padding: '10px 5px',
+                      color: reportTab === 'purchases' ? '#2563eb' : '#64748b',
+                      fontWeight: reportTab === 'purchases' ? '700' : '500',
+                      borderBottom: reportTab === 'purchases' ? '3px solid #2563eb' : 'none',
                       cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
                       transition: 'all 0.3s'
                     }}
                   >
                     <i className="fa-solid fa-truck-ramp-box"></i> All Purchases
                   </div>
-                  <div 
+                  <div
                     onClick={() => setReportTab('monthly')}
-                    style={{ 
-                      padding: '10px 5px', 
-                      color: reportTab === 'monthly' ? '#2563eb' : '#64748b', 
-                      fontWeight: reportTab === 'monthly' ? '700' : '500', 
-                      borderBottom: reportTab === 'monthly' ? '3px solid #2563eb' : 'none', 
+                    style={{
+                      padding: '10px 5px',
+                      color: reportTab === 'monthly' ? '#2563eb' : '#64748b',
+                      fontWeight: reportTab === 'monthly' ? '700' : '500',
+                      borderBottom: reportTab === 'monthly' ? '3px solid #2563eb' : 'none',
                       cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
                       transition: 'all 0.3s'
                     }}
@@ -1140,13 +1461,13 @@ function App() {
                       ]}>
                         <defs>
                           <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#6366f1" stopOpacity={0.1}/>
-                            <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
+                            <stop offset="5%" stopColor="#6366f1" stopOpacity={0.1} />
+                            <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
                           </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                        <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
-                        <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
+                        <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                        <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
                         <Tooltip />
                         <Area type="monotone" dataKey="sales" stroke="#6366f1" fillOpacity={1} fill="url(#colorSales)" strokeWidth={3} />
                       </AreaChart>
@@ -1174,19 +1495,19 @@ function App() {
                               <td style={{ padding: '15px 20px', fontWeight: '600', color: '#1e293b' }}>{inv.pi_number}</td>
                               <td style={{ padding: '15px 20px', color: '#64748b' }}>{new Date(inv.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                               <td style={{ padding: '15px 20px', fontWeight: '500' }}>{inv.client_name}</td>
-                              <td style={{ padding: '15px 20px', fontWeight: '700', color: '#1e293b' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
+                              <td style={{ padding: '15px 20px', fontWeight: '700', color: '#1e293b' }}>₹ {parseFloat(inv.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
                               <td style={{ padding: '15px 20px' }}>
-                                <span style={{ 
-                                  background: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#dcfce7' : (inv.status || '').toUpperCase() === 'PENDING' ? '#fef3c7' : '#f1f5f9', 
-                                  color: (inv.status || 'PAID').toUpperCase() === 'PAID' ? '#166534' : (inv.status || '').toUpperCase() === 'PENDING' ? '#92400e' : '#475569', 
-                                  padding: '4px 10px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: '700' 
+                                <span style={{
+                                  background: (inv.status || 'PENDING').toUpperCase() === 'PAID' ? '#dcfce7' : (inv.status || '').toUpperCase() === 'PENDING' ? '#fef3c7' : '#f1f5f9',
+                                  color: (inv.status || 'PENDING').toUpperCase() === 'PAID' ? '#166534' : (inv.status || '').toUpperCase() === 'PENDING' ? '#92400e' : '#475569',
+                                  padding: '4px 10px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: '700'
                                 }}>
-                                  {(inv.status || 'PAID').toUpperCase()}
+                                  {(inv.status || 'PENDING').toUpperCase()}
                                 </span>
                               </td>
                               <td style={{ padding: '15px 20px', textAlign: 'center' }}>
-                                <select 
-                                  value={inv.status || 'PAID'} 
+                                <select
+                                  value={inv.status || 'PENDING'}
                                   onChange={(e) => handleStatusUpdate(inv.id, e.target.value)}
                                   style={{ padding: '5px 10px', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.85rem', outline: 'none', background: '#f8fafc' }}
                                 >
@@ -1224,12 +1545,12 @@ function App() {
                               <td style={{ padding: '15px 20px', fontWeight: '600', color: '#1e293b' }}>{pur.bill_no}</td>
                               <td style={{ padding: '15px 20px', color: '#64748b' }}>{new Date(pur.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                               <td style={{ padding: '15px 20px', fontWeight: '500' }}>{pur.vendor}</td>
-                              <td style={{ padding: '15px 20px', fontWeight: '700', color: '#ef4444' }}>₹ {parseFloat(pur.amount).toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
+                              <td style={{ padding: '15px 20px', fontWeight: '700', color: '#ef4444' }}>₹ {parseFloat(pur.amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
                               <td style={{ padding: '15px 20px' }}>
-                                <span style={{ 
-                                  background: pur.status === 'RECEIVED' ? '#dcfce7' : pur.status === 'PENDING' ? '#fef3c7' : '#fee2e2', 
-                                  color: pur.status === 'RECEIVED' ? '#166534' : pur.status === 'PENDING' ? '#92400e' : '#b91c1c', 
-                                  padding: '4px 10px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: '700' 
+                                <span style={{
+                                  background: pur.status === 'RECEIVED' ? '#dcfce7' : pur.status === 'PENDING' ? '#fef3c7' : '#fee2e2',
+                                  color: pur.status === 'RECEIVED' ? '#166534' : pur.status === 'PENDING' ? '#92400e' : '#b91c1c',
+                                  padding: '4px 10px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: '700'
                                 }}>
                                   {pur.status}
                                 </span>
@@ -1264,9 +1585,9 @@ function App() {
                               <tr key={idx} style={{ borderBottom: '1px solid #f1f5f9', background: '#fff' }}>
                                 <td style={{ padding: '15px 20px', fontWeight: '700' }}>{m.month}</td>
                                 <td style={{ padding: '15px 20px' }}>{m.count}</td>
-                                <td style={{ padding: '15px 20px' }}>₹ {(m.total / 1.18).toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
-                                <td style={{ padding: '15px 20px' }}>₹ {(m.total - (m.total / 1.18)).toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
-                                <td style={{ padding: '15px 20px', fontWeight: '700', color: '#2563eb' }}>₹ {m.total.toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
+                                <td style={{ padding: '15px 20px' }}>₹ {(m.total / 1.18).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                                <td style={{ padding: '15px 20px' }}>₹ {(m.total - (m.total / 1.18)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                                <td style={{ padding: '15px 20px', fontWeight: '700', color: '#2563eb' }}>₹ {m.total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
                               </tr>
                             ));
                           })()}
@@ -1276,6 +1597,63 @@ function App() {
                         </tbody>
                       </table>
                     )}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {activeView === 'employeesView' && currentUser.role === 'Admin' && (
+            <section className="view-section">
+              <header className="top-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <i className="fa-solid fa-user-gear" style={{ color: '#6366f1', fontSize: '1.5rem' }}></i>
+                  <h2 style={{ fontSize: '1.5rem', fontWeight: '700', margin: 0, color: '#1e293b' }}>Employees Management</h2>
+                </div>
+              </header>
+              <div className="view-body" style={{ marginTop: '1.5rem' }}>
+                <div className="form-card" style={{ padding: 0, overflow: 'hidden' }}>
+                  <div className="table-responsive">
+                    <table className="clean-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase', background: '#f8fafc' }}>
+                          <th style={{ padding: '15px 20px', fontWeight: '600' }}>Name</th>
+                          <th style={{ padding: '15px 20px', fontWeight: '600' }}>Employee ID</th>
+                          <th style={{ padding: '15px 20px', fontWeight: '600' }}>Email/Username</th>
+                          <th style={{ padding: '15px 20px', fontWeight: '600' }}>Role</th>
+                          <th style={{ padding: '15px 20px', fontWeight: '600', textAlign: 'center' }}>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {allUsers.map((user) => (
+                          <tr key={user.id} style={{ borderBottom: '1px solid #f1f5f9', background: '#fff' }}>
+                            <td style={{ padding: '15px 20px', fontWeight: '600', color: '#1e293b' }}>{user.name || 'N/A'}</td>
+                            <td style={{ padding: '15px 20px', color: '#64748b' }}>{user.employee_id || 'N/A'}</td>
+                            <td style={{ padding: '15px 20px', color: '#64748b' }}>{user.username}</td>
+                            <td style={{ padding: '15px 20px' }}>
+                              <span style={{
+                                background: user.role === 'Admin' ? '#dcfce7' : user.role === 'Sales' ? '#eff6ff' : '#f1f5f9',
+                                color: user.role === 'Admin' ? '#166534' : user.role === 'Sales' ? '#2563eb' : '#475569',
+                                padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '700'
+                              }}>
+                                {user.role}
+                              </span>
+                            </td>
+                            <td style={{ padding: '15px 20px', textAlign: 'center' }}>
+                              <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                                <button onClick={() => handleEditUser(user)} className="btn-clean" style={{ color: '#2563eb', background: '#eff6ff', padding: '6px 12px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}>
+                                  <i className="fa-solid fa-pen-to-square" style={{ marginRight: '5px' }}></i> Edit
+                                </button>
+                                <button onClick={() => handleDeleteUser(user.id)} className="btn-clean" style={{ color: '#ef4444', background: '#fef2f2', padding: '6px 12px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}>
+                                  <i className="fa-solid fa-trash-can" style={{ marginRight: '5px' }}></i> Delete
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -1302,7 +1680,7 @@ function App() {
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="text-muted">Status:</span> <span style={{ color: '#059669', fontWeight: '600' }}>Active</span></div>
                     </div>
                   </div>
-                  
+
                   {/* Company Details */}
                   <div className="form-card" style={{ borderLeft: '4px solid #10b981' }}>
                     <h3><i className="fa-solid fa-building"></i> Company Details</h3>
@@ -1325,6 +1703,9 @@ function App() {
             </section>
           )}
 
+
+
+
           {activeView === 'invoiceView' && (
             <section className="view-section">
               <header className="top-header">
@@ -1342,7 +1723,7 @@ function App() {
                 </div>
               </header>
               <div className="view-body">
-                <form id="invoiceForm" onSubmit={e=>e.preventDefault()}>
+                <form id="invoiceForm" onSubmit={e => e.preventDefault()}>
                   <div className="form-card">
                     <h3><i className="fa-solid fa-building"></i> Company Info</h3>
                     <div className="grid-3">
@@ -1359,15 +1740,15 @@ function App() {
                   <div className="form-card mt-2">
                     <h3><i className="fa-solid fa-user-tie"></i> Bill To & Ship To (Consignee)</h3>
                     <div className="grid-3">
-                                            <div className="input-group full-width">
+                      <div className="input-group full-width">
                         <label style={{ color: '#475569', fontWeight: '700', fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>
                           <i className="fa-solid fa-magnifying-glass-chart" style={{ marginRight: '8px', color: '#6366f1' }}></i>
                           Quick Select Customer (Auto-Fill Form)
                         </label>
                         <div style={{ position: 'relative' }}>
-                          <select 
+                          <select
                             value={formData.consigneeName || ''}
-                            onChange={handleCustomerSelect} 
+                            onChange={handleCustomerSelect}
                             style={{
                               width: '100%',
                               padding: '14px 16px',
@@ -1439,22 +1820,22 @@ function App() {
                       <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#1e293b', margin: 0 }}>
                         <i className="fa-solid fa-layer-group" style={{ color: '#6366f1', marginRight: '10px' }}></i> Product Items
                       </h3>
-                      <button type="button" className="btn btn-primary" onClick={addProduct} style={{ 
-                        padding: '10px 25px', 
-                        borderRadius: '12px', 
-                        fontSize: '0.9rem', 
-                        background: '#1e293b', 
-                        color: '#fff', 
-                        border: 'none', 
-                        display: 'flex', 
-                        alignItems: 'center', 
+                      <button type="button" className="btn btn-primary" onClick={addProduct} style={{
+                        padding: '10px 25px',
+                        borderRadius: '12px',
+                        fontSize: '0.9rem',
+                        background: '#1e293b',
+                        color: '#fff',
+                        border: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
                         gap: '10px',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                       }}>
                         <i className="fa-solid fa-circle-plus"></i> Add New Product
                       </button>
                     </div>
-                    
+
                     <div className="table-responsive" style={{ borderRadius: '12px', border: '1px solid #f1f5f9' }}>
                       <table className="clean-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
                         <thead>
@@ -1476,12 +1857,12 @@ function App() {
                             const taxable = (parseFloat(p.qty) || 0) * (parseFloat(p.price) || 0);
                             const gstTotal = (parseFloat(p.cgst) || 0) + (parseFloat(p.sgst) || 0) + (parseFloat(p.igst) || 0);
                             const totalWithGst = taxable + (taxable * (gstTotal / 100));
-                            
+
                             return (
                               <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9', transition: 'background 0.2s' }} className="table-row-hover">
                                 <td style={{ padding: '12px 10px' }}>
-                                  <select 
-                                    value={p.name} 
+                                  <select
+                                    value={p.name}
                                     onChange={e => {
                                       const selected = masterProducts.find(mp => mp.name === e.target.value);
                                       if (selected) {
@@ -1509,7 +1890,7 @@ function App() {
                                   <div style={{ display: 'flex', gap: '5px' }}>
                                     <input type="text" value={p.pack} className="styled-input" style={{ width: '60px' }} onChange={e => updateProduct(p.id, 'pack', e.target.value)} />
                                     <select value={p.unit} onChange={e => updateProduct(p.id, 'unit', e.target.value)} className="styled-select" style={{ width: '55px', padding: '8px 5px' }}>
-                                      <option value="Ltr">Ltr</option><option value="ml">ml</option><option value="kg">kg</option><option value="gm">gm</option><option value="Bag">Bag</option>
+                                      <option value="Ltr">Ltr</option><option value="ml">ml</option><option value="kg">kg</option><option value="gm">gm</option>
                                     </select>
                                   </div>
                                 </td>
@@ -1535,13 +1916,13 @@ function App() {
                                   ₹ {totalWithGst.toFixed(2)}
                                 </td>
                                 <td style={{ padding: '12px 10px', textAlign: 'center' }}>
-                                  <button type="button" onClick={() => removeProduct(p.id)} style={{ 
-                                    color: '#ef4444', 
-                                    background: '#fef2f2', 
-                                    border: '1px solid #fee2e2', 
-                                    width: '32px', 
-                                    height: '32px', 
-                                    borderRadius: '8px', 
+                                  <button type="button" onClick={() => removeProduct(p.id)} style={{
+                                    color: '#ef4444',
+                                    background: '#fef2f2',
+                                    border: '1px solid #fee2e2',
+                                    width: '32px',
+                                    height: '32px',
+                                    borderRadius: '8px',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',
@@ -1614,7 +1995,7 @@ function App() {
                 }}>
                   <img src={sikkoLogo} alt="Watermark" style={{ width: '100%', maxWidth: '500px' }} />
                 </div>
-                
+
                 <div className="inv-top-bar" style={{ position: 'relative', zIndex: '1' }}>PROFORMA INVOICE</div>
 
                 <div className="inv-header" style={{ position: 'relative', zIndex: '1' }}>
@@ -1750,7 +2131,7 @@ function App() {
                     <div className="text-red fw-bold" style={{ textDecoration: 'underline', fontStyle: 'italic', marginBottom: '10px' }}>TERMS & CONDITIONS:</div>
                     <div style={{ fontSize: '9px', lineHeight: '1.4' }}>
                       {formData.termsConditions.split('\n').map((t, i) => (
-                        <div key={i}>{i+1}. {t}</div>
+                        <div key={i}>{i + 1}. {t}</div>
                       ))}
                     </div>
                   </div>
@@ -1767,11 +2148,11 @@ function App() {
                     </div>
                     <div className="sign-box">
                       <div style={{ fontWeight: 'bold' }}>For Sikko Industries Ltd</div>
-                      <div style={{ fontSize: '10px', marginTop: '20px' }}>Trade Executive<br/>({formData.companyPerson})</div>
+                      <div style={{ fontSize: '10px', marginTop: '20px' }}>Trade Executive<br />({formData.companyPerson})</div>
                     </div>
                     <div className="sign-box" style={{ background: '#f8fafc' }}>
                       <div style={{ fontSize: '10px', fontWeight: 'bold' }}>Proforma Confirmed & Accepted by Consignee</div>
-                      <div style={{ fontSize: '9px', marginTop: '10px' }}>(Sign & Stamp)<br/><strong>{formData.consigneePerson}</strong></div>
+                      <div style={{ fontSize: '9px', marginTop: '10px' }}>(Sign & Stamp)<br /><strong>{formData.consigneePerson}</strong></div>
                     </div>
                   </div>
                 </div>
@@ -1785,17 +2166,17 @@ function App() {
       {/* Add Customer Modal */}
       {showAddCustomerModal && (
         <div className="modal show modal-fade">
-          <div className="modal-content modal-slide" style={{maxWidth:'500px'}}>
+          <div className="modal-content modal-slide" style={{ maxWidth: '500px' }}>
             <div className="modal-header">
               <h2>Add New Customer</h2>
-              <button className="btn btn-secondary" onClick={()=>setShowAddCustomerModal(false)}><i className="fa-solid fa-times"></i></button>
+              <button className="btn btn-secondary" onClick={() => setShowAddCustomerModal(false)}><i className="fa-solid fa-times"></i></button>
             </div>
             <div className="modal-body">
               <form onSubmit={async e => {
                 e.preventDefault();
                 try {
                   console.log("Sending customer data:", newCustomer);
-                  const res = await fetch('http://localhost:5000/api/customers', {
+                  const res = await fetch('http://127.0.0.1:5001/api/customers', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newCustomer)
@@ -1809,18 +2190,18 @@ function App() {
                     const errData = await res.json();
                     alert("Error Saving Customer: " + errData.error);
                   }
-                } catch (err) { 
+                } catch (err) {
                   console.error(err);
                   alert("Network Error: Could not connect to server.");
                 }
               }}>
                 <div className="grid-2">
-                  <div className="input-group mb-2"><label>Customer Name</label><input type="text" required onChange={e=>setNewCustomer({...newCustomer, name: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Company Name</label><input type="text" onChange={e=>setNewCustomer({...newCustomer, company: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Phone Number</label><input type="text" required maxLength="10" pattern="\d{10}" placeholder="10 Digit Mobile No." onChange={e=>setNewCustomer({...newCustomer, phone: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Email ID</label><input type="email" onChange={e=>setNewCustomer({...newCustomer, email: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>GST No.</label><input type="text" onChange={e=>setNewCustomer({...newCustomer, gst: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>City</label><input type="text" onChange={e=>setNewCustomer({...newCustomer, city: e.target.value})} /></div>
+                  <div className="input-group mb-2"><label>Customer Name</label><input type="text" required onChange={e => setNewCustomer({ ...newCustomer, name: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Company Name</label><input type="text" onChange={e => setNewCustomer({ ...newCustomer, company: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Phone Number</label><input type="text" required maxLength="10" pattern="\d{10}" placeholder="10 Digit Mobile No." onChange={e => setNewCustomer({ ...newCustomer, phone: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Email ID</label><input type="email" onChange={e => setNewCustomer({ ...newCustomer, email: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>GST No.</label><input type="text" onChange={e => setNewCustomer({ ...newCustomer, gst: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>City</label><input type="text" onChange={e => setNewCustomer({ ...newCustomer, city: e.target.value })} /></div>
                 </div>
                 <button type="submit" className="btn btn-primary mt-2" style={{ width: '100%', padding: '12px' }}>Save Customer</button>
               </form>
@@ -1832,20 +2213,20 @@ function App() {
       {/* Edit Customer Modal */}
       {showEditCustomerModal && editingCustomer && (
         <div className="modal show modal-fade">
-          <div className="modal-content modal-slide" style={{maxWidth:'500px'}}>
+          <div className="modal-content modal-slide" style={{ maxWidth: '500px' }}>
             <div className="modal-header">
               <h2>Edit Customer</h2>
-              <button className="btn btn-secondary" onClick={()=>setShowEditCustomerModal(false)}><i className="fa-solid fa-times"></i></button>
+              <button className="btn btn-secondary" onClick={() => setShowEditCustomerModal(false)}><i className="fa-solid fa-times"></i></button>
             </div>
             <div className="modal-body">
               <form onSubmit={handleUpdateCustomer}>
                 <div className="grid-2">
-                  <div className="input-group mb-2"><label>Customer Name</label><input type="text" value={editingCustomer.name} required onChange={e=>setEditingCustomer({...editingCustomer, name: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Company Name</label><input type="text" value={editingCustomer.company} onChange={e=>setEditingCustomer({...editingCustomer, company: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Phone Number</label><input type="text" value={editingCustomer.phone} required maxLength="10" pattern="\d{10}" placeholder="10 Digit Mobile No." onChange={e=>setEditingCustomer({...editingCustomer, phone: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>Email ID</label><input type="email" value={editingCustomer.email} onChange={e=>setEditingCustomer({...editingCustomer, email: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>GST No.</label><input type="text" value={editingCustomer.gst} onChange={e=>setEditingCustomer({...editingCustomer, gst: e.target.value})} /></div>
-                  <div className="input-group mb-2"><label>City</label><input type="text" value={editingCustomer.city} onChange={e=>setEditingCustomer({...editingCustomer, city: e.target.value})} /></div>
+                  <div className="input-group mb-2"><label>Customer Name</label><input type="text" value={editingCustomer.name} required onChange={e => setEditingCustomer({ ...editingCustomer, name: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Company Name</label><input type="text" value={editingCustomer.company} onChange={e => setEditingCustomer({ ...editingCustomer, company: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Phone Number</label><input type="text" value={editingCustomer.phone} required maxLength="10" pattern="\d{10}" placeholder="10 Digit Mobile No." onChange={e => setEditingCustomer({ ...editingCustomer, phone: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>Email ID</label><input type="email" value={editingCustomer.email} onChange={e => setEditingCustomer({ ...editingCustomer, email: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>GST No.</label><input type="text" value={editingCustomer.gst} onChange={e => setEditingCustomer({ ...editingCustomer, gst: e.target.value })} /></div>
+                  <div className="input-group mb-2"><label>City</label><input type="text" value={editingCustomer.city} onChange={e => setEditingCustomer({ ...editingCustomer, city: e.target.value })} /></div>
                 </div>
                 <button type="submit" className="btn btn-primary mt-2" style={{ width: '100%', padding: '12px' }}>Update Customer</button>
               </form>
@@ -1857,22 +2238,22 @@ function App() {
       {/* Add Product Modal */}
       {showAddProductModal && (
         <div className="modal show modal-fade">
-          <div className="modal-content modal-slide" style={{maxWidth:'500px'}}>
-            <div className="modal-header"><h2>Add New Product</h2><button className="btn btn-secondary" onClick={()=>setShowAddProductModal(false)}><i className="fa-solid fa-times"></i></button></div>
+          <div className="modal-content modal-slide" style={{ maxWidth: '500px' }}>
+            <div className="modal-header"><h2>Add New Product</h2><button className="btn btn-secondary" onClick={() => setShowAddProductModal(false)}><i className="fa-solid fa-times"></i></button></div>
             <div className="modal-body">
-              <form onSubmit={async e=>{
-                e.preventDefault(); 
+              <form onSubmit={async e => {
+                e.preventDefault();
                 try {
-                  await fetch('http://localhost:5000/api/products', {
-                    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(newProductMaster)
+                  await fetch('http://127.0.0.1:5001/api/products', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(newProductMaster)
                   });
                   fetchProducts();
                   setShowAddProductModal(false);
-                } catch(err) { console.error(err); }
+                } catch (err) { console.error(err); }
               }}>
-                <div className="input-group mb-2"><label>Product Name</label><input type="text" required onChange={e=>setNewProductMaster({...newProductMaster, name: e.target.value})} /></div>
+                <div className="input-group mb-2"><label>Product Name</label><input type="text" required onChange={e => setNewProductMaster({ ...newProductMaster, name: e.target.value })} /></div>
                 <div className="input-group mb-2"><label>Category</label>
-                  <select required onChange={e=>setNewProductMaster({...newProductMaster, cat: e.target.value})} style={{padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)'}}>
+                  <select required onChange={e => setNewProductMaster({ ...newProductMaster, cat: e.target.value })} style={{ padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                     <option value="">-- Select Category --</option>
                     <option value="ORGANIC CERT. AGRO CHEMICALS">ORGANIC CERT. AGRO CHEMICALS</option>
                     <option value="ORGANIC AGRO CHEMICALS">ORGANIC AGRO CHEMICALS</option>
@@ -1884,9 +2265,9 @@ function App() {
                     <option value="HOUSEHOLD PRODUCTS">HOUSEHOLD PRODUCTS</option>
                   </select>
                 </div>
-                <div className="input-group mb-2"><label>HSN Code</label><input type="text" required onChange={e=>setNewProductMaster({...newProductMaster, hsn: e.target.value})} /></div>
-                <div className="input-group mb-2"><label>Packing Size</label><input type="text" required onChange={e=>setNewProductMaster({...newProductMaster, pack: e.target.value})} /></div>
-                <div className="input-group mb-2"><label>Price Per Unit</label><input type="number" required onChange={e=>setNewProductMaster({...newProductMaster, price: e.target.value})} /></div>
+                <div className="input-group mb-2"><label>HSN Code</label><input type="text" required onChange={e => setNewProductMaster({ ...newProductMaster, hsn: e.target.value })} /></div>
+                <div className="input-group mb-2"><label>Packing Size</label><input type="text" required onChange={e => setNewProductMaster({ ...newProductMaster, pack: e.target.value })} /></div>
+                <div className="input-group mb-2"><label>Price Per Unit</label><input type="number" required onChange={e => setNewProductMaster({ ...newProductMaster, price: e.target.value })} /></div>
                 <button type="submit" className="btn btn-primary mt-2">Save Product</button>
               </form>
             </div>
@@ -1896,13 +2277,13 @@ function App() {
       {/* Edit Product Modal */}
       {showEditProductModal && editingProduct && (
         <div className="modal show modal-fade">
-          <div className="modal-content modal-slide" style={{maxWidth:'500px'}}>
-            <div className="modal-header"><h2>Edit Product</h2><button className="btn btn-secondary" onClick={()=>setShowEditProductModal(false)}><i className="fa-solid fa-times"></i></button></div>
+          <div className="modal-content modal-slide" style={{ maxWidth: '500px' }}>
+            <div className="modal-header"><h2>Edit Product</h2><button className="btn btn-secondary" onClick={() => setShowEditProductModal(false)}><i className="fa-solid fa-times"></i></button></div>
             <div className="modal-body">
               <form onSubmit={handleUpdateProductMaster}>
-                <div className="input-group mb-2"><label>Product Name</label><input type="text" value={editingProduct.name} required onChange={e=>setEditingProduct({...editingProduct, name: e.target.value})} /></div>
+                <div className="input-group mb-2"><label>Product Name</label><input type="text" value={editingProduct.name} required onChange={e => setEditingProduct({ ...editingProduct, name: e.target.value })} /></div>
                 <div className="input-group mb-2"><label>Category</label>
-                  <select required value={editingProduct.cat} onChange={e=>setEditingProduct({...editingProduct, cat: e.target.value})} style={{padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', width: '100%'}}>
+                  <select required value={editingProduct.cat} onChange={e => setEditingProduct({ ...editingProduct, cat: e.target.value })} style={{ padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', width: '100%' }}>
                     <option value="">-- Select Category --</option>
                     <option value="ORGANIC CERT. AGRO CHEMICALS">ORGANIC CERT. AGRO CHEMICALS</option>
                     <option value="ORGANIC AGRO CHEMICALS">ORGANIC AGRO CHEMICALS</option>
@@ -1914,10 +2295,10 @@ function App() {
                     <option value="HOUSEHOLD PRODUCTS">HOUSEHOLD PRODUCTS</option>
                   </select>
                 </div>
-                <div className="input-group mb-2"><label>HSN Code</label><input type="text" value={editingProduct.hsn} required onChange={e=>setEditingProduct({...editingProduct, hsn: e.target.value})} /></div>
-                <div className="input-group mb-2"><label>Packing Size</label><input type="text" value={editingProduct.pack} required onChange={e=>setEditingProduct({...editingProduct, pack: e.target.value})} /></div>
-                <div className="input-group mb-2"><label>Price Per Unit</label><input type="number" value={editingProduct.price} required onChange={e=>setEditingProduct({...editingProduct, price: parseFloat(e.target.value)})} /></div>
-                
+                <div className="input-group mb-2"><label>HSN Code</label><input type="text" value={editingProduct.hsn} required onChange={e => setEditingProduct({ ...editingProduct, hsn: e.target.value })} /></div>
+                <div className="input-group mb-2"><label>Packing Size</label><input type="text" value={editingProduct.pack} required onChange={e => setEditingProduct({ ...editingProduct, pack: e.target.value })} /></div>
+                <div className="input-group mb-2"><label>Price Per Unit</label><input type="number" value={editingProduct.price} required onChange={e => setEditingProduct({ ...editingProduct, price: parseFloat(e.target.value) })} /></div>
+
                 {/* Variations Section in Edit Modal */}
                 <div style={{ marginTop: '20px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
                   <h4 style={{ fontSize: '0.9rem', color: '#1e293b', marginBottom: '10px' }}>Manage Variations</h4>
@@ -1926,26 +2307,70 @@ function App() {
                       <input type="text" placeholder="Pack (e.g. 500ml)" value={sub.pack} style={{ flex: 2, padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }} onChange={e => {
                         const subs = [...editingProduct.subproducts];
                         subs[idx].pack = e.target.value;
-                        setEditingProduct({...editingProduct, subproducts: subs});
+                        setEditingProduct({ ...editingProduct, subproducts: subs });
                       }} />
                       <input type="number" placeholder="Price" value={sub.price} style={{ flex: 1, padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }} onChange={e => {
                         const subs = [...editingProduct.subproducts];
                         subs[idx].price = parseFloat(e.target.value);
-                        setEditingProduct({...editingProduct, subproducts: subs});
+                        setEditingProduct({ ...editingProduct, subproducts: subs });
                       }} />
                       <button type="button" style={{ color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }} onClick={() => {
                         const subs = editingProduct.subproducts.filter((_, i) => i !== idx);
-                        setEditingProduct({...editingProduct, subproducts: subs});
+                        setEditingProduct({ ...editingProduct, subproducts: subs });
                       }}><i className="fa-solid fa-trash"></i></button>
                     </div>
                   ))}
                   <button type="button" className="btn-clean-add" onClick={() => {
                     const subs = editingProduct.subproducts || [];
-                    setEditingProduct({...editingProduct, subproducts: [...subs, { id: Date.now(), pack: '', price: 0 }]});
+                    setEditingProduct({ ...editingProduct, subproducts: [...subs, { id: Date.now(), pack: '', price: 0 }] });
                   }}><i className="fa-solid fa-plus"></i> Add Another Variation</button>
                 </div>
 
                 <button type="submit" className="btn btn-primary mt-2" style={{ width: '100%', padding: '12px' }}>Save All Changes</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit User Modal */}
+      {showEditUserModal && editingUser && (
+        <div className="modal show modal-fade">
+          <div className="modal-content modal-slide" style={{ maxWidth: '500px' }}>
+            <div className="modal-header">
+              <h2>Edit Employee</h2>
+              <button className="btn btn-secondary" onClick={() => setShowEditUserModal(false)}><i className="fa-solid fa-times"></i></button>
+            </div>
+            <div className="modal-body">
+              <form onSubmit={handleUpdateUser}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                  <div className="input-group">
+                    <label>Full Name</label>
+                    <input type="text" value={editingUser.name || ''} required onChange={e => setEditingUser({ ...editingUser, name: e.target.value })} />
+                  </div>
+                  <div className="input-group">
+                    <label>Employee ID</label>
+                    <input type="text" value={editingUser.employee_id || ''} required onChange={e => setEditingUser({ ...editingUser, employee_id: e.target.value })} />
+                  </div>
+                  <div className="input-group">
+                    <label>Email/Username</label>
+                    <input type="text" value={editingUser.username || ''} required onChange={e => setEditingUser({ ...editingUser, username: e.target.value })} />
+                  </div>
+                  <div className="input-group">
+                    <label>Assigned Role</label>
+                    <select
+                      value={editingUser.role || 'Sales'}
+                      required
+                      onChange={e => setEditingUser({ ...editingUser, role: e.target.value })}
+                      style={{ width: '100%', padding: '12px', borderRadius: '12px', border: '2px solid #e2e8f0', background: '#fff' }}
+                    >
+                      <option value="Admin">Administrator</option>
+                      <option value="Sales">Sales Executive</option>
+                      <option value="Account">Account</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary mt-3" style={{ width: '100%', padding: '12px', borderRadius: '12px' }}>Update Employee</button>
               </form>
             </div>
           </div>
